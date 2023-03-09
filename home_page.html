@@ -3,8 +3,16 @@
   <head>
     <title>SecureU</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/4a6278922f.js" crossorigin="anonymous"></script>
+    <style>
+        .frame{
+            border: 3px solid black;
+            width: 30%;
+            height: 170px;
+        }
+    </style>
   </head>
-  <body>
+  <body class = "bg-gray-800">
     <nav class="bg-blue-600">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
           <div class="relative flex h-16 items-center justify-between">
@@ -53,6 +61,29 @@
           </div>
         </div>
       </nav>
-      <h1 class = "text-4xl text-center mt-16 font-thin">Here you can learn free and easy how to stay safe on the Internet!</h1>
+      <h1 class = "text-4xl text-center mt-16 font-black text-white">Here you can learn free and easy how to stay safe on the Internet!</h1>
+      <div id = "cyber_sec" class = "frame text-center mx-auto mt-10 overflow-hidden relative p-5">
+        <p class = "text-3xl font-semibold text-white">What is cyber security?</p>
+        <br>
+        <p class = "text-white text-xl">Cyber security is the protection of computer systems and networks from attack by malicious actors that may result in unauthorized information disclosure, theft of, or damage to hardware, software, or data, as well as from the disruption or misdirection of the services they provide.</p>
+        <br>
+        <i onclick = "pullDown()" id = "arrow" class="text-white fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
+        <script>
+            function pullDown(){
+                const cyber = document.getElementById("cyber_sec");
+                const arrow = document.getElementById("arrow");
+                if(arrow.classList.contains("fa-circle-arrow-down")){
+                    cyber.style.height = 'auto';
+                    arrow.classList.remove("fa-circle-arrow-down");
+                    arrow.classList.add("fa-circle-arrow-up");
+                }
+                else{
+                    cyber.style.height = '170px';
+                    arrow.classList.remove("fa-circle-arrow-up");
+                    arrow.classList.add("fa-circle-arrow-down");
+                }
+            }
+        </script>
+      </div>
   </body>
 </html>

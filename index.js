@@ -88,8 +88,8 @@ let Elem = document.getElementById("Enter_encrypting")
 let Elem2 = document.getElementById("Output_encrypting")
 Elem.onchange = () => {
     Elem2.val = encryption((Elem.val))
-   
 }
+
 Elem = document.getElementById("Enter_decrypting")
 Elem2 = document.getElementById("Output_decrypting")
 Elem.onchange = () => {
