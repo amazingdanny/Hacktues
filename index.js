@@ -84,8 +84,16 @@ function password_generator(){
 }
 main()
 */
+getkey = document.getElementById("key")
+console.log(getkey)
+getkey.onclick = () =>
+{
+    console.log("key yay")
+    generate_key()
+}
+console.log(getkey)
 let Elem = document.getElementById("Enter_encrypting")
-let Elem2 = document.getElementById("Output_encrypting")
+let Elem2 = document.getElementById("\f")
 Elem.onchange = () => {
     Elem2.val = encryption((Elem.val))
 }
