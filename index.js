@@ -24,7 +24,9 @@ async function encryption(data){
 async function decryption(data){
     if (key)
     {
-        let decrypted = await window.crypto.subtle.decrypt("RSA-OAEP", key.privateKey, data);
+        console.log(data, key)
+        let decrypted = await window.crypto.subtle.decrypt({name: "RSA-OAEP"}, key.privateKey, data);
+        console.log(decrypted)
         return decrypted;
     }
     return 0
@@ -84,22 +86,39 @@ function password_generator(){
 }
 main()
 */
-getkey = document.getElementById("key")
-console.log(getkey)
-getkey.onclick = () =>
-{
-    console.log("key yay")
-    generate_key()
+function ab2str(buf) {
+    return window.btoa(String.fromCharCode.apply(null, new Uint8Array(buf)));
 }
-console.log(getkey)
-let Elem = document.getElementById("Enter_encrypting")
-let Elem2 = document.getElementById("\f")
-Elem.onchange = () => {
-    Elem2.val = encryption((Elem.val))
-}
+window.onload = () =>{
+    let enc = new TextEncoder("utf-8");
+    let enc2 = new TextDecoder("utf-8");
+    const getkey = document.getElementById("key")
+    console.log(getkey)
+    getkey.onclick = async () =>
+    {
+        console.log("key yay")
+        await generate_key()
+    }
+    console.log(getkey)
+    let Elem = document.getElementById("Enter_encrypting")
+    let Elem2 = document.getElementById("Output_encrypting")
+    let decrypt_elem 
+    console.log(Elem)
+    console.log(Elem2)
+    Elem.onchange = async () => {
+        decrypt_elem = await encryption(enc.encode(Elem.value))
+        Elem2.value = ab2str(decrypt_elem)
+        console.log("raboti")
+    }
 
-Elem = document.getElementById("Enter_decrypting")
-Elem2 = document.getElementById("Output_decrypting")
-Elem.onchange = () => {
-    Elem2.val = decryption((Elem.val))
+    Elem = document.getElementById("Enter_decrypting")
+    let Elem3 = document.getElementById("Output_decrypting")
+    Elem.onchange = async () => {
+        console.log("raboti.2")
+        console.log(decrypt_elem)
+        console.log(enc2.decode(await decryption(decrypt_elem)))
+        console.log(await decryption(decrypt_elem))
+        Elem3.value = enc2.decode(await decryption(decrypt_elem))
+    }
+
 }
