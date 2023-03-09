@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SecureU</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .LogIn{
+          border: 3px solid white;
+          width: 30%;
+          border-radius: 30px;
+
+        }
+        .h1{
+          font-family: 'Monaco', monospace;
+          -webkit-text-stroke: 2px black;
+        }
+        .text{
+          font-family: 'Arial', sans-serif;
+          -webkit-text-stroke: 1px black;
+        }
+      </style>
+  </head>
+  <body class = "bg-[url(bg_login_2.png)] bg-cover bg-no-repeat bg-center">
+    <h1 class = "h1 text-6xl text-center mt-10 font-thin text-white">Sign up!</h1>
+    <h2 class = "text text-4xl text-center mt-16 font-thin text-white">Create your account!</h2>
+    <div class = "LogIn text-center mt-20 text-center mx-auto p-10 space-y-10">
+        <h3 class = "text text-2xl font-thin text-white">Sign up</h3>
+        <form class = "space-y-10" action = "#" method = "POST">
+          <input type="hidden" name="remember" value="true">
+          <div class="space-y-3 rounded-md shadow-sm">
+            <div>
+                <label for="username" class="sr-only">Username</label>
+                <input required class="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Username">
+            </div>
+            <div>
+              <label for="email-address" class="sr-only">Email address</label>
+              <input id="email-address" name="email" type="email" autocomplete="email" required class="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Email address">
+            </div>
+            <div>
+              <label for="password" class="sr-only">Password</label>
+              <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Password">
+            </div>
+            <div>
+                <label for="password" class="sr-only">Confirm Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Confirm Password">
+              </div>
+          </div>
+          <div>
+            <button type="submit" class="group relative flex w-full justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                </svg>
+              </span>
+              Sign in
+            </button>
+          </div>
+          <div>
+            <p class = "text-white">Already have an account? <a href = "index.html" class = "text-blue-600 underline underline-offset-1 visited:text-purple-600">Log in!</a></p>
+          </div>
+        </form>
+      </div>
+  </body>
+</html>
