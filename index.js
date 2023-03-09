@@ -53,11 +53,11 @@ function password_checker(password){
         //strengthBadge.textContent = 'Strong';
         return  "strong";
     } else if(mediumPassword.test(password)) {
-        //strengthBadge.style.backgroundColor = 'blue';
+        //strengthBadge.style.backgroundColor = 'yello w';
         //strengthBadge.textContent = 'Medium';
         return "medium";
     } else {
-        //strengthBadge.style.backgroundColor = 'r ed';
+        //strengthBadge.style.backgroundColor = 'red';
         //strengthBadge.textContent = 'Weak';
         return "weak";
     }
@@ -79,7 +79,19 @@ function password_generator(){
     }
     return password
 }
-function main(){
+/*function main(){
     console.log(password_generator());
 }
 main()
+*/
+let Elem = document.getElementById("Enter_encrypting")
+let Elem2 = document.getElementById("Output_encrypting")
+Elem.onchange = () => {
+    Elem2.val = encryption((Elem.val))
+   
+}
+Elem = document.getElementById("Enter_decrypting")
+Elem2 = document.getElementById("Output_decrypting")
+Elem.onchange = () => {
+    Elem2.val = decryption((Elem.val))
+}
