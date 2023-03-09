@@ -43,7 +43,7 @@ main()
 */
 function password_checker(password){
     let timeout;
-    let strengthBadge //kato go addvwash w site-a mahni teq dwete
+    let strengthBadge //kato go addvwash w site-a mahni teq dwete i otkomentriraj wsichko
     //let password = document.getElementById('PassEntry');
     //let strengthBadge = document.getElementById('StrengthDisp');
     let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
@@ -67,3 +67,19 @@ function password_checker(password){
 }
 main()
 */
+function password_generator(){
+    let password = ''
+    let length = 15
+    const chars = "0123456789abcdefghijklmnopqrstuvxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVXYZ"
+    const array = new Uint32Array(length);
+    crypto.getRandomValues(array);
+    for (i = 0; i < length; i++)
+    {
+        password += chars[array[i] % chars.length];
+    }
+    return password
+}
+function main(){
+    console.log(password_generator());
+}
+main()
