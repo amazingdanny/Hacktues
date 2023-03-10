@@ -15,7 +15,6 @@ async function generate_key(){
 async function encryption(data){
     if (key)
     {
-        console.log(key)
         let encrypted = await window.crypto.subtle.encrypt("RSA-OAEP", key.publicKey, data);
         return encrypted;
     }
@@ -23,9 +22,7 @@ async function encryption(data){
 }
 async function decryption(data){
 
-    //console.log(data, key)
     let decrypted = await window.crypto.subtle.decrypt({name: "RSA-OAEP"}, key.privateKey, data);
-    console.log(decrypted)
     return decrypted;
 
 
@@ -36,23 +33,9 @@ async function main(){
     let enc = new TextEncoder("utf-8");
     let encrypted = await encryption(enc.encode("test"))
     enc = new TextDecoder("utf-8");
-    console.log(enc.decode(encrypted))
     encrypted = await decryption(encrypted)
-    console.log(enc.decode(encrypted))
 }
 
-
-/*function main(){
-    console.log(password_checker("Passw0r!dg4@"))
-}
-main()
-*/
-
-/*function main(){
-    console.log(password_generator());
-}
-main()
-*/
 function b64toab(base64) {
     var binary_string = window.atob(base64);
     var len = binary_string.length;
@@ -71,13 +54,11 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         let enc = new TextEncoder("utf-8");
         let enc2 = new TextDecoder("utf-8");
         const getkey = document.getElementById("key")
-        console.log(getkey)
         getkey.onclick = async () =>
         {
             await generate_key()
             outputPrivateKey = document.getElementById("Output_private_key")
             outputPublicKey = document.getElementById("Output_public_key")
-            //outputPrivateKey.value = SubtleCrypto.exportKey(key.privateKey)
             outputPrivateKey.value = ab2str(await window.crypto.subtle.exportKey("pkcs8", key.privateKey));
             outputPublicKey.value = ab2str(await window.crypto.subtle.exportKey("spki", key.publicKey));
         }
@@ -114,31 +95,21 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         }
         enter_Public_Key.onkeydown = async () =>{
             key.publicKey = await importPublicKey(enter_Public_Key.value)
-            console.log(key.publicKey)
         }
         enter_Private_Key.onkeydown = async () =>{
             key.privateKey = await importPrivateKey(enter_Private_Key.value)
         }
-        console.log(getkey)
         const encryptInput = document.getElementById("Enter_encrypting")
         const encryptOutput = document.getElementById("Output_encrypting")
         let decrypt_elem 
-        // console.log(Elem)
-        // console.log(Elem2)
         encryptInput.onkeydown = async () => {
-            console.log(encryptInput.value)
             decrypt_elem = await encryption(enc.encode(encryptInput.value))
             encryptOutput.value = ab2str(decrypt_elem)
-            //console.log("raboti")
         }
 
         const decryptInput = document.getElementById("Enter_decrypting")
         const decryptOutput = document.getElementById("Output_decrypting")
         decryptInput.onkeydown = async () => {
-            // console.log("raboti.2")
-            console.log(decrypt_elem)
-            // console.log(enc2.decode(await decryption(decrypt_elem)))
-            // console.log(await decryption(decrypt_elem))
             decryptOutput.value = enc2.decode(await decryption(b64toab(decryptInput.value)))
         }
 
