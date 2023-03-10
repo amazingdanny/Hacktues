@@ -1,5 +1,5 @@
 
-let key; 
+let key = {}; 
 async function generate_key(){
     key = await window.crypto.subtle.generateKey({
         name: "RSA-OAEP",
@@ -111,9 +111,43 @@ window.onload = async () =>{
             outputPrivateKey.value = ab2str(await window.crypto.subtle.exportKey("pkcs8", key.privateKey));
             outputPublicKey.value = ab2str(await window.crypto.subtle.exportKey("spki", key.publicKey));
         }
-        const enter_Public_Key = documen.getElementById("Enter_Public_Key")
-        enter_Public_Key.onchange = () =>{
-            key.publicKey = b64toab(enter_Public_Key.value)
+        const enter_Public_Key = document.getElementById("Enter_Public_Key")
+        const enter_Private_Key = document.getElementById("Enter_Private_Key")
+        async function importPublicKey(pem){
+            const binaryDer = b64toab(pem);
+
+            return window.crypto.subtle.importKey(
+                "spki",
+                binaryDer,
+                {
+                name: "RSA-OAEP",
+                hash: "SHA-256",
+                },
+                true,
+                ["encrypt"]
+            );
+        }
+        async function importPrivateKey(pem) {    
+ 
+            const binaryDer = b64toab(pem);
+
+            return await window.crypto.subtle.importKey(
+                "pkcs8",
+                binaryDer,
+                {
+                name: "RSA-OAEP",
+                hash: "SHA-256",
+                },
+                true,
+                [ "decrypt "]
+            );
+        }
+        enter_Public_Key.onchange = async () =>{
+            key.publicKey = await importPublicKey(enter_Public_Key.value)
+            console.log(key.publicKey)
+        }
+        enter_Private_Key.onchange = async () =>{
+            key.privateKey = await importPrivateKey(enter_Private_Key.value)
         }
         console.log(getkey)
         const encryptInput = document.getElementById("Enter_encrypting")
