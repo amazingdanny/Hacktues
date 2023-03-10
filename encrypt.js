@@ -115,8 +115,8 @@ document.addEventListener("DOMContentLoaded", (event) =>{
 
     }
     catch(error){
-        err = document.getElementById("Error")
-        err.value = "There is an error"
+        err = document.getElementById("Error")``
+        err.textContent = "There is an error"
         err.style.color = "red"
     }
 
