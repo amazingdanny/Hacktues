@@ -1,3 +1,14 @@
+
+function pullDown(id, arrow) {
+    const paragraph = document.getElementById(id);
+    const arr = document.getElementById(arrow);
+    if (arr.classList.contains("fa-circle-arrow-down")) {
+      paragraph.style.height = paragraph.firstElementChild.offsetHeight + "px";
+      arr.classList.remove("fa-circle-arrow-down");
+      arr.classList.add("fa-circle-arrow-up");
+      paragraph.style.removeProperty("box-shadow");
+    }
+}  
 document.addEventListener("DOMContentLoaded", (event) =>{
     function pullDown(id, arrow) {
         const paragraph = document.getElementById(id);
