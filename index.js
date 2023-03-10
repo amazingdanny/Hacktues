@@ -22,15 +22,16 @@ async function encryption(data){
     return 0;
 }
 async function decryption(data){
-    if (key)
-    {
-        let decrypted = await window.crypto.subtle.decrypt("RSA-OAEP", key.privateKey, data);
-        return decrypted;
-    }
-    return 0
+
+    //console.log(data, key)
+    let decrypted = await window.crypto.subtle.decrypt({name: "RSA-OAEP"}, key.privateKey, data);
+    console.log(decrypted)
+    return decrypted;
+
+
 }
 
-/*async function main(){
+async function main(){
     await generate_key()
     let enc = new TextEncoder("utf-8");
     let encrypted = await encryption(enc.encode("test"))
@@ -39,8 +40,7 @@ async function decryption(data){
     encrypted = await decryption(encrypted)
     console.log(enc.decode(encrypted))
 }
-main()
-*/
+
 function password_checker(password){
     let timeout;
     let strengthBadge //kato go addvwash w site-a mahni teq dwete i otkomentriraj wsichko
@@ -84,22 +84,56 @@ function password_generator(){
 }
 main()
 */
-getkey = document.getElementById("key")
-console.log(getkey)
-getkey.onclick = () =>
-{
-    console.log("key yay")
-    generate_key()
+function b64toab(base64) {
+    var binary_string = window.atob(base64);
+    var len = binary_string.length;
+    var bytes = new Uint8Array(len);
+    for (var i = 0; i < len; i++) {
+        bytes[i] = binary_string.charCodeAt(i);
+    }
+    return bytes.buffer;
 }
-console.log(getkey)
-let Elem = document.getElementById("Enter_encrypting")
-let Elem2 = document.getElementById("\f")
-Elem.onchange = () => {
-    Elem2.val = encryption((Elem.val))
+function ab2str(buf) {
+    return window.btoa(String.fromCharCode.apply(null, new Uint8Array(buf)));
 }
+window.onload = async () =>{
+    try{
+        let enc = new TextEncoder("utf-8");
+        let enc2 = new TextDecoder("utf-8");
+        const getkey = document.getElementById("key")
+        console.log(getkey)
+        getkey.onclick = async () =>
+        {
+            console.log("key yay")
+            await generate_key()
+        }
+        console.log(getkey)
+        const encryptInput = document.getElementById("Enter_encrypting")
+        const encryptOutput = document.getElementById("Output_encrypting")
+        let decrypt_elem 
+        // console.log(Elem)
+        // console.log(Elem2)
+        encryptInput.onchange = async () => {
+            console.log(encryptInput.value)
+            decrypt_elem = await encryption(enc.encode(encryptInput.value))
+            encryptOutput.value = ab2str(decrypt_elem)
+            //console.log("raboti")
+        }
 
-Elem = document.getElementById("Enter_decrypting")
-Elem2 = document.getElementById("Output_decrypting")
-Elem.onchange = () => {
-    Elem2.val = decryption((Elem.val))
+        const decryptInput = document.getElementById("Enter_decrypting")
+        const decryptOutput = document.getElementById("Output_decrypting")
+        decryptInput.onchange = async () => {
+            // console.log("raboti.2")
+            console.log(decrypt_elem)
+            // console.log(enc2.decode(await decryption(decrypt_elem)))
+            // console.log(await decryption(decrypt_elem))
+            decryptOutput.value = enc2.decode(await decryption(b64toab(decryptInput.value)))
+        }
+    }
+    catch(error){
+        err = document.getElementById("Error")
+        err.value = "There is an error"
+        err.style.color = "red"
+    }
+
 }
