@@ -1,4 +1,4 @@
-Security misconfiguration:
+Security misconfiguration
 90% of applications were tested for some form of misconfiguration, with an average incidence rate of 4.%, and over 208k occurrences of a Common Weakness Enumeration (CWE) in this risk category.
 
 The application might be vulnerable if the application is:
