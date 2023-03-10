@@ -13,7 +13,7 @@
       height: 130px;
     }
 
-    #cyber_sec {
+    #cyber_sec, #enc {
       transition: height 0.15s ease-out;
     }
   </style>
@@ -91,28 +91,46 @@
         from attack by malicious actors that may result in unauthorized information disclosure, theft of, or damage to
         hardware, software, or data, as well as from the disruption or misdirection of the services they provide.</p>
         <br>
-      <i onclick="pullDown()" id="arrow"
+      <i  id="arrow_cs" onclick="pullDown('cyber_sec', 'arrow_cs')"
         class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
-      <script>
-        function pullDown() {
-          const cyber = document.getElementById("cyber_sec");
-          const arrow = document.getElementById("arrow");
-          if (arrow.classList.contains("fa-circle-arrow-down")) {
-            cyber.style.height = document.getElementById("big_height").offsetHeight + "px";
-            arrow.classList.remove("fa-circle-arrow-down");
-            arrow.classList.add("fa-circle-arrow-up");
-            cyber.style.removeProperty("box-shadow");
-          }
-          else {
-            cyber.style.height = '130px';
-            arrow.classList.remove("fa-circle-arrow-up");
-            arrow.classList.add("fa-circle-arrow-down");
-            cyber.style.boxShadow = "black 0px -60px 60px -50px inset";
-          }
-        }
-      </script>
     </div>
   </div>
+  <div id="enc" class="mb-10 frame text-center mx-auto mt-10 overflow-hidden relative p-5" style = "box-shadow: black 0px -60px 60px -50px inset;">
+    <div id="big_height">
+      <p class="text-3xl font-semibold" style="font-size: 2vw;">What is encription?</p>
+      <br>
+      <p class="text-xl pb-5" style="font-size: 1.2vw;">Encryption is the process of scrambling or enciphering data so it can be read only by someone with the means to return it to its original
+        state. It is a crucial feature of a safe and trustworthy Internet. It helps provide data security for sensitive information.
+       In this website we have an example where you can try to encrypt a text or a password. Encryption works by generating 2 keys - a public and 
+       a private one. The public key is used for encrypting the data and can be shared with other people. The private key is used for decrypting
+       the data and unlike the public one it SHOULD NOT be shared with anyone except people you work with that need to decrypt certain files
+       or passwords. Our example works by generating the key with the "Generate new key" button (the encryption won't work without generating
+       the key) and then you put the text in it's designated text box.</p>
+      <br>
+      <i id="arrow_enc" onclick="pullDown('enc', 'arrow_enc')"
+        class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
+    </div>
+  </div>
+  <script>
+    function pullDown(id, arrow) {
+      const paragraph = document.getElementById(id);
+      console.log(paragraph)
+      const arr = document.getElementById(arrow);
+      if (arr.classList.contains("fa-circle-arrow-down")) {
+        paragraph.style.height = paragraph.firstElementChild.offsetHeight + "px";
+        console.log(paragraph.firstChild);
+        arr.classList.remove("fa-circle-arrow-down");
+        arr.classList.add("fa-circle-arrow-up");
+        paragraph.style.removeProperty("box-shadow");
+      }
+      else {
+        paragraph.style.height = '130px';
+        arr.classList.remove("fa-circle-arrow-up");
+        arr.classList.add("fa-circle-arrow-down");
+        paragraph.style.boxShadow = "black 0px -60px 60px -50px inset";
+      }
+    }
+  </script>
 </body>
 
 </html>
