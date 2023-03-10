@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", (even) =>{
     const SLMF = document.getElementById("SLMF")
     const IAF = document.getElementById("IAF")
     const VOC = document.getElementById("VOC")
+    const SDIF = document.getElementById("SDIF")
 
 
 

@@ -5,7 +5,7 @@
   <head>
     <title>SecureU</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src = "homepage.js"></script>
+    <script src="homepage.js"></script>
     <script
       src="https://kit.fontawesome.com/4a6278922f.js"
       crossorigin="anonymous"
@@ -26,7 +26,7 @@
     </style>
   </head>
 
-  <body class = "bg-blue-800">
+  <body class="bg-blue-800">
     <nav class="bg-blue-600">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
@@ -143,68 +143,73 @@
         </div>
       </div>
     </nav>
-    <div class = "w-2/3 mx-auto shadow-xl min-h-screen bg-purple-600 pb-10">
-    <br><br>
-    <h1 class="text-4xl text-center font-black mx-10" style="font-size: 2.5vw">
-      Here you can learn free and easy how to stay safe on the Internet!
-    </h1>
-    <div
-      id="cyber_sec"
-      class="frame text-center mx-auto mt-20 overflow-hidden relative p-3"
-      style="box-shadow: black 0px -60px 60px -50px inset">
-      <div id="big_height">
-        <p class="text-3xl font-semibold" style="font-size: 2vw">
-          What is cyber security?
-        </p>
-        <br />
-        <p class="text-xl pb-5" style="font-size: 1.2vw">
-          Cyber security is the protection of computer systems and networks from
-          attack by malicious actors that may result in unauthorized information
-          disclosure, theft of, or damage to hardware, software, or data, as
-          well as from the disruption or misdirection of the services they
-          provide.
-        </p>
-        <br />
-        <i
-          id="arrow_cs"
-          onclick="pullDown('cyber_sec', 'arrow_cs')"
-          class="pulldown-arrow fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"
-        ></i>
+    <div class="w-2/3 mx-auto shadow-xl min-h-screen bg-purple-600 pb-10">
+      <br /><br />
+      <h1
+        class="text-4xl text-center font-black mx-10"
+        style="font-size: 2.5vw"
+      >
+        Here you can learn free and easy how to stay safe on the Internet!
+      </h1>
+      <div
+        id="cyber_sec"
+        class="frame text-center mx-auto mt-20 overflow-hidden relative p-3"
+        style="box-shadow: black 0px -60px 60px -50px inset"
+      >
+        <div id="big_height">
+          <p class="text-3xl font-semibold" style="font-size: 2vw">
+            What is cyber security?
+          </p>
+          <br />
+          <p class="text-xl pb-5" style="font-size: 1.2vw">
+            Cyber security is the protection of computer systems and networks
+            from attack by malicious actors that may result in unauthorized
+            information disclosure, theft of, or damage to hardware, software,
+            or data, as well as from the disruption or misdirection of the
+            services they provide.
+          </p>
+          <br />
+          <i
+            id="arrow_cs"
+            onclick="pullDown('cyber_sec', 'arrow_cs')"
+            class="pulldown-arrow fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"
+          ></i>
+        </div>
+      </div>
+      <div
+        id="enc"
+        class="frame text-center mx-auto mt-10 overflow-hidden relative p-4"
+        style="box-shadow: black 0px -60px 60px -50px inset"
+      >
+        <div id="big_height">
+          <p class="text-3xl font-semibold" style="font-size: 2vw">
+            What is encription?
+          </p>
+          <br />
+          <p class="text-xl pb-5" style="font-size: 1.2vw">
+            Encryption is the process of scrambling or enciphering data so it
+            can be read only by someone with the means to return it to its
+            original state. It is a crucial feature of a safe and trustworthy
+            Internet. It helps provide data security for sensitive information.
+            In this website we have an example where you can try to encrypt a
+            text or a password. Encryption works by generating 2 keys - a public
+            and a private one. The public key is used for encrypting the data
+            and can be shared with other people. The private key is used for
+            decrypting the data and unlike the public one it SHOULD NOT be
+            shared with anyone except people you work with that need to decrypt
+            certain files or passwords. Our example works by generating the key
+            with the "Generate new key" button (the encryption won't work
+            without generating the key) and then you put the text in it's
+            designated text box.
+          </p>
+          <br />
+          <i
+            id="arrow_enc"
+            onclick="pullDown('enc', 'arrow_enc')"
+            class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"
+          ></i>
+        </div>
       </div>
     </div>
-    <div
-      id="enc"
-      class="frame text-center mx-auto mt-10 overflow-hidden relative p-4"
-      style="box-shadow: black 0px -60px 60px -50px inset"
-    >
-      <div id="big_height">
-        <p class="text-3xl font-semibold" style="font-size: 2vw">
-          What is encription?
-        </p>
-        <br />
-        <p class="text-xl pb-5" style="font-size: 1.2vw">
-          Encryption is the process of scrambling or enciphering data so it can
-          be read only by someone with the means to return it to its original
-          state. It is a crucial feature of a safe and trustworthy Internet. It
-          helps provide data security for sensitive information. In this website
-          we have an example where you can try to encrypt a text or a password.
-          Encryption works by generating 2 keys - a public and a private one.
-          The public key is used for encrypting the data and can be shared with
-          other people. The private key is used for decrypting the data and
-          unlike the public one it SHOULD NOT be shared with anyone except
-          people you work with that need to decrypt certain files or passwords.
-          Our example works by generating the key with the "Generate new key"
-          button (the encryption won't work without generating the key) and then
-          you put the text in it's designated text box.
-        </p>
-        <br />
-        <i
-          id="arrow_enc"
-          onclick="pullDown('enc', 'arrow_enc')"
-          class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"
-        ></i>
-      </div>
-    </div>
-  </div>
   </body>
 </html>
