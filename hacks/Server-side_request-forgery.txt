@@ -1,4 +1,4 @@
-Server-side request forgery:
+Server-side request forgery
 The data shows a relatively low incidence rate with above average testing coverage and above-average Exploit and Impact potential ratings. 
 
 
