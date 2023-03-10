@@ -10,7 +10,7 @@
     .frame {
       border: 3px solid black;
       width: 30%;
-      height: 170px;
+      height: 130px;
     }
 
     #cyber_sec {
@@ -83,14 +83,14 @@
   </nav>
   <h1 class="text-4xl text-center mt-16 font-black" style="font-size: 2.5vw;">Here you can learn free and easy how to
     stay safe on the Internet!</h1>
-  <div id="cyber_sec" class="frame text-center mx-auto mt-10 overflow-hidden relative p-5">
+  <div id="cyber_sec" class="frame text-center mx-auto mt-10 overflow-hidden relative p-5" style = "box-shadow: black 0px -60px 60px -50px inset;">
     <div id="big_height">
       <p class="text-3xl font-semibold" style="font-size: 2vw;">What is cyber security?</p>
       <br>
-      <p class="text-xl" style="font-size: 1.2vw;">Cyber security is the protection of computer systems and networks
+      <p class="text-xl pb-5" style="font-size: 1.2vw;">Cyber security is the protection of computer systems and networks
         from attack by malicious actors that may result in unauthorized information disclosure, theft of, or damage to
         hardware, software, or data, as well as from the disruption or misdirection of the services they provide.</p>
-      <br>
+        <br>
       <i onclick="pullDown()" id="arrow"
         class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
       <script>
@@ -101,11 +101,13 @@
             cyber.style.height = document.getElementById("big_height").offsetHeight + "px";
             arrow.classList.remove("fa-circle-arrow-down");
             arrow.classList.add("fa-circle-arrow-up");
+            cyber.style.removeProperty("box-shadow");
           }
           else {
-            cyber.style.height = '170px';
+            cyber.style.height = '130px';
             arrow.classList.remove("fa-circle-arrow-up");
             arrow.classList.add("fa-circle-arrow-down");
+            cyber.style.boxShadow = "black 0px -60px 60px -50px inset";
           }
         }
       </script>
