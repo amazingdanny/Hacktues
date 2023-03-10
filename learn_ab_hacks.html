@@ -1,586 +1,757 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>SecureU</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
+    <script src="learn_abt_hacks.js"></script>
+  </head>
 
-<body>
+  <body>
     <nav class="bg-blue-600">
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="relative flex h-16 items-center justify-between">
-                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    <button type="button"
-                        class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                        aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                    <div class="hidden sm:ml-6 sm:block">
-                        <div class="flex space-x-4">
-                            <a href="home_page.html"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
-                            <a href="learn_ab_hacks.html"
-                                class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Learn about
-                                common hacks</a>
-                            <a href="encrypt.html"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                                aria-current="page">Encrypt</a>
-                            <a href="password.html"
-                                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Password</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <div class="relative ml-3">
-                        <div>
-                            <button type="button"
-                                class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                                id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                                <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full" src="user.png" alt="" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              type="button"
+              class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+          >
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="flex space-x-4">
+                <a
+                  href="home_page.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Home</a
+                >
+                <a
+                  href="learn_ab_hacks.html"
+                  class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Learn about common hacks</a
+                >
+                <a
+                  href="encrypt.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  aria-current="page"
+                  >Encrypt</a
+                >
+                <a
+                  href="password.html"
+                  class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                  >Password</a
+                >
+              </div>
             </div>
-        </div>
-        <div class="sm:hidden" id="mobile-menu">
-            <div class="space-y-1 px-2 pt-2 pb-3">
-                <a href="home_page.html"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Home</a>
-                <a href="learn_ab_hacks.html"
-                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium">Learn about common hacks</a>
-                <a href="encrypt.html"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                    aria-current="page">Encrypt</a>
-                <a href="password.html"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Password</a>
+          </div>
+          <div
+            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+          >
+            <div class="relative ml-3">
+              <div>
+                <button
+                  type="button"
+                  class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  id="user-menu-button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  <span class="sr-only">Open user menu</span>
+                  <img class="h-8 w-8 rounded-full" src="user.png" alt="" />
+                </button>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          <a
+            href="home_page.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="learn_ab_hacks.html"
+            class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+            >Learn about common hacks</a
+          >
+          <a
+            href="encrypt.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            aria-current="page"
+            >Encrypt</a
+          >
+          <a
+            href="password.html"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            >Password</a
+          >
+        </div>
+      </div>
     </nav>
     <div class="w-2/3 mx-auto shadow-xl pb-10 pt-10 min-h-screen">
-        <p class="text-center font-semibold" style="font-size: 3vw">
-            Click one of the buttons to read more information about the hack!
-        </p>
-        <div class="mt-10 flex justify-center space-x-10">
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                BAC
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                SSRF
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                Injection
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                SDIF
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                Security misconfiguration
-            </button>
+      <p class="text-center font-semibold" style="font-size: 3vw">
+        Click one of the buttons to read more information about the hack!
+      </p>
+      <div class="mt-10 flex justify-center space-x-10">
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv="BAC"
+        >
+          BAC
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+        >
+          SSRF
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv="inj"
+        >
+          Injection
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+        >
+          SDIF
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv="Sec_misconfig"
+        >
+          Security misconfiguration
+        </button>
+      </div>
+      <div class="mt-10 flex justify-center space-x-10 ml-2">
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+        >
+          VOC
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+        >
+          IAF
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv="Insec_des"
+        >
+          Insecure design
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv=""
+        >
+          SLMF
+        </button>
+        <button
+          class="buttons bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
+          data-showDiv="Cr_fail"
+        >
+          Cryptographic Failures
+        </button>
+      </div>
+      <div class="text-left mt-16">
+        <div id="BAC" class="divs hidden">
+          <p class="font-semibold text-center" style="font-size: 2vw">
+            Broken Access Control
+          </p>
+          <p class="font-thin" style="font-size: 1.2vw">
+            Access control enforces policy such that users cannot act outside of
+            their intended permissions. Failures typically lead to unauthorized
+            information disclosure, modification, or destruction of all data or
+            performing a business function outside the user's limits. Common
+            access control vulnerabilities include:
+            <br />
+            Violation of the principle of least privilege or deny by default,
+            where access should only be granted for particular capabilities,
+            roles, or users, but is available to anyone.
+            <br />
+            Bypassing access control checks by modifying the URL (parameter
+            tampering or force browsing), internal application state, or the
+            HTML page, or by using an attack tool modifying API requests.
+            <br />
+            Permitting viewing or editing someone else's account, by providing
+            its unique identifier (insecure direct object references)
+            <br />
+            Accessing API with missing access controls for POST, PUT and DELETE.
+            <br />
+            Elevation of privilege. Acting as a user without being logged in or
+            acting as an admin when logged in as a user.
+            <br />
+            Metadata manipulation, such as replaying or tampering with a JSON
+            Web Token (JWT) access control token, or a cookie or hidden field
+            manipulated to elevate privileges or abusing JWT invalidation.
+            <br />
+            CORS misconfiguration allows API access from unauthorized/untrusted
+            origins.
+            <br />
+            Force browsing to authenticated pages as an unauthenticated user or
+            to privileged pages as a standard user.
+            <br />
+            How do I prevent this? You should try these:
+            <br />
+            Except for public resources, deny access by default.
+            <br />
+            Implement access control mechanisms once and re-use them throughout
+            the application, including minimizing Cross-Origin Resource Sharing
+            (CORS) usage.
+            <br />
+            Model access controls should enforce record ownership rather than
+            accepting that the user can create, read, update, or delete any
+            record.
+            <br />
+            Unique application business limit requirements should be enforced by
+            domain models.
+            <br />
+            Disable web server directory listing and ensure file metadata (e.g.,
+            .git) and backup files are not present within web roots.
+            <br />
+            Log access control failures, alert admins when appropriate (e.g.,
+            repeated failures).
+            <br />
+            Rate limit API and controller access to minimize the harm from
+            automated attack tooling.
+            <br />
+            Stateful session identifiers should be invalidated on the server
+            after logout. Stateless JWT tokens should rather be short-lived so
+            that he window of opportunity for an attacker is minimized. For
+            longer lived JWTs it's highly recommended to follow the OAuth
+            standards to revoke access.
+            <br />
+            Examples of BAC attacks:
+            <br />
+            Scenario #1:
+            <br />
+            The application uses unverified data in a SQL call that is accessing
+            account information:
+            <br />
+            pstmt.setString(1, request.getParameter("acct"));
+            <br />
+            ResultSet results = pstmt.executeQuery( );
+            <br />
+            An attacker simply modifies the browser's 'acct' parameter to send
+            whatever account number they want. If not correctly verified, the
+            attacker can access any user's account.
+            <br />
+            https://example.com/app/accountInfo?acct=notmyacct
+            <br />
+            Scenario #2: An attacker simply forces browses to target URLs. Admin
+            rights are required for access to the admin page.
+            <br />
+            https://example.com/app/getappInfo
+            <br />
+            https://example.com/app/admin_getappInfo
+            <br />
+            If an unauthenticated user can access either page, it's a flaw. If a
+            non-admin can access the admin page, this is a flaw.
+          </p>
         </div>
-        <div class="mt-10 flex justify-center space-x-10 ml-2">
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                VOC
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                IAF
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                Insecure design
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                SLMF
-            </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
-                Cryptographic Failures
-            </button>
-        </div>
-        <div class="text-left mt-16">
-            <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Broken Access Control</p>
-                <p class="font-thin" style="font-size: 1.2vw;">
-                    Access control enforces policy such that users cannot act outside of their intended permissions.
-                    Failures typically lead to unauthorized information disclosure, modification, or destruction of all
-                    data or performing a business function outside the user's limits. Common access control
-                    vulnerabilities include:
-                    <br>
-                    Violation of the principle of least privilege or deny by default, where access should only be
-                    granted for particular capabilities, roles, or users, but is available to anyone.
-                    <br>
-                    Bypassing access control checks by modifying the URL (parameter tampering or force browsing),
-                    internal application state, or the HTML page, or by using an attack tool modifying API requests.
-                    <br>
-                    Permitting viewing or editing someone else's account, by providing its unique identifier (insecure
-                    direct object references)
-                    <br>
-                    Accessing API with missing access controls for POST, PUT and DELETE.
-                    <br>
-                    Elevation of privilege. Acting as a user without being logged in or acting as an admin when logged
-                    in as a user.
-                    <br>
-                    Metadata manipulation, such as replaying or tampering with a JSON Web Token (JWT) access control
-                    token, or a cookie or hidden field manipulated to elevate privileges or abusing JWT invalidation.
-                    <br>
-                    CORS misconfiguration allows API access from unauthorized/untrusted origins.
-                    <br>
-                    Force browsing to authenticated pages as an unauthenticated user or to privileged pages as a
-                    standard user.
-                    <br>
-                    How do I prevent this? You should try these:
-                    <br>
-                    Except for public resources, deny access by default.
-                    <br>
-                    Implement access control mechanisms once and re-use them throughout the application, including
-                    minimizing Cross-Origin Resource Sharing (CORS) usage.
-                    <br>
-                    Model access controls should enforce record ownership rather than accepting that the user can
-                    create, read, update, or delete any record.
-                    <br>
-                    Unique application business limit requirements should be enforced by domain models.
-                    <br>
-                    Disable web server directory listing and ensure file metadata (e.g., .git) and backup files are not
-                    present within web roots.
-                    <br>
-                    Log access control failures, alert admins when appropriate (e.g., repeated failures).
-                    <br>
-                    Rate limit API and controller access to minimize the harm from automated attack tooling.
-                    <br>
-                    Stateful session identifiers should be invalidated on the server after logout. Stateless JWT tokens
-                    should rather be short-lived so that he window of opportunity for an attacker is minimized. For
-                    longer lived JWTs it's highly recommended to follow the OAuth standards to revoke access.
-                    <br>
-                    Examples of BAC attacks:
-                    <br>
-                    Scenario #1:
-                    <br>
-                    The application uses unverified data in a SQL call that is accessing account information:
-                    <br>
-                    pstmt.setString(1, request.getParameter("acct"));
-                    <br>
-                    ResultSet results = pstmt.executeQuery( );
-                    <br>
-                    An attacker simply modifies the browser's 'acct' parameter to send whatever account number they
-                    want. If not correctly verified, the attacker can access any user's account.
-                    <br>
-                    https://example.com/app/accountInfo?acct=notmyacct
-                    <br>
-                    Scenario #2: An attacker simply forces browses to target URLs. Admin rights are required for access
-                    to the admin page.
-                    <br>
-                    https://example.com/app/getappInfo
-                    <br>
-                    https://example.com/app/admin_getappInfo
-                    <br>
-                    If an unauthenticated user can access either page, it's a flaw. If a non-admin can access the admin
-                    page, this is a flaw.
-            </div>
-            <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Cryptographic Failures</p>
-                <p class="font-thin" style="font-size: 1.2vw;">
-                    Previously known as Sensitive Data Exposure, which is more of a broad symptom rather than a root
-                    cause, the focus is on failures related to cryptography (or lack thereof). Which often lead to
-                    exposure of sensitive data. Notable Common Weakness Enumerations (CWEs) included are CWE-259: Use of
-                    Hard-coded Password, CWE-327: Broken or Risky Crypto Algorithm, and CWE-331 Insufficient Entropy.
-                    <br>
-                    The first thing is to determine the protection needs of data in transit and at rest. For example,
-                    passwords, credit card numbers, health records, personal information, and business secrets require
-                    extra protection, mainly if that data falls under privacy laws, e.g., EU's General Data Protection
-                    Regulation (GDPR), or regulations, e.g., financial data protection such as PCI Data Security
-                    Standard (PCI DSS). For all such data:
-                    <br>
-                    Is any data transmitted in clear text? This concerns protocols such as HTTP, SMTP, FTP also using
-                    TLS upgrades like STARTTLS.
-                    External internet traffic is hazardous. Verify all internal traffic, e.g., between load balancers,
-                    web servers, or back-end systems.
-                    <br>
-                    Are any old or weak cryptographic algorithms or protocols used either by default or in older code?
-                    <br>
-                    Are default crypto keys in use, weak crypto keys generated or re-used, or is proper key management
-                    or rotation missing? Are crypto keys
-                    checked into source code repositories?
-                    <br>
-                    Is encryption not enforced, e.g., are any HTTP headers (browser) security directives or headers
-                    missing?
-                    <br>
-                    Is the received server certificate and the trust chain properly validated?
-                    <br>
-                    Are initialization vectors ignored, reused, or not generated sufficiently secure for the
-                    cryptographic mode of operation?
-                    Is an insecure mode of operation such as ECB in use? Is encryption used when authenticated
-                    encryption is more appropriate?
-                    <br>
-                    Are passwords being used as cryptographic keys in absence of a password base key derivation
-                    function?
-                    <br>
-                    Is randomness used for cryptographic purposes that was not designed to meet cryptographic
-                    requirements?
-                    Even if the correct function is chosen, does it need to be seeded by the developer, and if not, has
-                    the developer over-written the
-                    strong seeding functionality built into it with a seed that lacks sufficient
-                    entropy/unpredictability?
-                    <br>
-                    Are deprecated hash functions such as MD5 or SHA1 in use, or are non-cryptographic hash functions
-                    used when cryptographic hash functions
-                    are needed?
-                    <br>
-                    Are deprecated cryptographic padding methods such as PKCS number 1 v1.5 in use?
-                    <br>
-                    Are cryptographic error messages or side channel information exploitable, for example in the form of
-                    padding oracle attacks?
-                    <br>
-                    How do I prevent this? You can try this:
-                    <br>
-                    Classify data processed, stored, or transmitted by an application. Identify which data is sensitive
-                    according to privacy laws,
-                    regulatory requirements, or business needs.
-                    <br>
-                    Don't store sensitive data unnecessarily. Discard it as soon as possible or use PCI DSS compliant
-                    tokenization or even truncation.
-                    Data that is not retained cannot be stolen.
-                    <br>
-                    Make sure to encrypt all sensitive data at rest.
-                    <br>
-                    Ensure up-to-date and strong standard algorithms, protocols, and keys are in place; use proper key
-                    management.
-                    <br>
-                    Encrypt all data in transit with secure protocols such as TLS with forward secrecy (FS) ciphers,
-                    cipher prioritization by the server,
-                    and secure parameters. Enforce encryption using directives like HTTP Strict Transport Security
-                    (HSTS).
-                    <br>
-                    Disable caching for response that contain sensitive data.
-                    <br>
-                    Apply required security controls as per the data classification.
-                    <br>
-                    Do not use legacy protocols such as FTP and SMTP for transporting sensitive data.
-                    <br>
-                    Store passwords using strong adaptive and salted hashing functions with a work factor (delay
-                    factor), such as Argon2, scrypt,
-                    bcrypt or PBKDF2.
-                    <br>
-                    Initialization vectors must be chosen appropriate for the mode of operation. For many modes, this
-                    means using a CSPRNG (cryptographically
-                    secure pseudo random number generator). For modes that require a nonce, then the initialization
-                    vector (IV) does not need a CSPRNG.
-                    In all cases, the IV should never be used twice for a fixed key.
-                    <br>
-                    Always use authenticated encryption instead of just encryption.
-                    <br>
-                    Keys should be generated cryptographically randomly and stored in memory as byte arrays. If a
-                    password is used, then it must be converted
-                    to a key via an appropriate password base key derivation function.
-                    <br>
-                    Ensure that cryptographic randomness is used where appropriate, and that it has not been seeded in a
-                    predictable way or with low entropy.
-                    Most modern APIs do not require the developer to seed the CSPRNG to get security.
-                    <br>
-                    Avoid deprecated cryptographic functions and padding schemes, such as MD5, SHA1, PKCS number 1 v1.5.
-                    <br>
-                    Verify independently the effectiveness of configuration and settings.
-                    <br>
-                    Example of such attacks:
-                    <br>
-                    Scenario #1:
-                    <br>
-                    An application encrypts credit card numbers in a database using automatic database
-                    encryption. However, this data is
-                    automatically decrypted when retrieved, allowing a SQL injection flaw to retrieve credit card
-                    numbers in clear text.
-                    <br>
-                    Scenario #2:
-                    <br>
-                    A site doesn't use or enforce TLS for all pages or supports weak encryption. An
-                    attacker monitors network traffic
-                    (e.g., at an insecure wireless network), downgrades connections from HTTPS to HTTP, intercepts
-                    requests, and steals the user's session
-                    cookie. The attacker then replays this cookie and hijacks the user's (authenticated) session,
-                    accessing or modifying the user's
-                    private data. Instead of the above they could alter all transported data, e.g., the recipient of a
-                    money transfer.
-                    <br>
-                    Scenario #3:
-                    <br>
-                    The password database uses unsalted or simple hashes to store everyone's passwords. A
-                    file upload flaw allows an attacker
-                    to retrieve the password database. All the unsalted hashes can be exposed with a rainbow table of
-                    pre-calculated hashes.
-                    Hashes generated by simple or fast hash functions may be cracked by GPUs, even if they were salted.
-            </div>
-            <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Injection</p>
-                <p class="font-thin" style="font-size: 1.2vw;">
-                    94% of the applications were tested for some form of injection with a max incidence rate of 19%, an
-                    average incidence rate of 3%, and 274k occurrences.
-                    <br>
-                    An application is vulnerable to attack when:
-                    <br>
-                    User-supplied data is not validated, filtered, or sanitized by the application.
-                    <br>
-                    Dynamic queries or non-parameterized calls without context-aware escaping are used directly in the
-                    interpreter.
-                    <br>
-                    Hostile data is used within object-relational mapping (ORM) search parameters to extract additional,
-                    sensitive records.
-                    <br>
-                    Hostile data is directly used or concatenated. The SQL or command contains the structure and
-                    malicious data in dynamic queries,
-                    commands, or stored procedures.
-                    <br>
-                    Some of the more common injections are:
-                    <br>
-                    SQL, NoSQL, OS command, Object Relational Mapping (ORM),
-                    LDAP, and Expression Language (EL)
-                    or Object Graph Navigation Library (OGNL) injection.
-                    <br>
-                    The concept is identical among all interpreters. Source code review is the
-                    best method of detecting if applications are vulnerable to injections. Automated testing of all
-                    parameters, headers, URL, cookies,
-                    JSON, SOAP, and XML data inputs is strongly encouraged. Organizations can include static (SAST),
-                    dynamic (DAST), and interactive (IAST) application security testing tools into the CI/CD pipeline to
-                    identify introduced injection
-                    flaws before production deployment.
-                    <br>
-                    How do i prevent this?
-                    <br>
-                    Preventing injection requires keeping data separate from commands and queries:
-                    <br>
-                    The preferred option is to use a safe API, which avoids using the interpreter entirely, provides a
-                    parameterized interface, or
-                    migrates to Object Relational Mapping Tools (ORMs).
-                    <br>
-                    Note: Even when parameterized, stored procedures can still introduce SQL injection if PL/SQL or
-                    T-SQL concatenates queries
-                    and data or executes hostile data with EXECUTE IMMEDIATE or exec().
-                    <br>
-                    Use positive server-side input validation. This is not a complete defense as many applications
-                    require special characters,
-                    such as text areas or APIs for mobile applications.
-                    <br>
-                    For any residual dynamic queries, escape special characters using the specific escape syntax for
-                    that interpreter.
-                    <br>
-                    Note: SQL structures such as table names, column names, and so on cannot be escaped, and thus
-                    user-supplied structure names
-                    are dangerous. This is a common issue in report-writing software.
-                    <br>
-                    Use LIMIT and other SQL controls within queries to prevent mass disclosure of records in case of SQL
-                    injection.
-                    <br>
-                    Example attack scenarios:
-                    <br>
-                    Scenario #1:
-                    <br>
-                    An application uses untrusted data in the construction of the following vulnerable SQL
-                    call: String query = "SELECT \* FROM accounts WHERE custID='" + request.getParameter("id") + "'";
-                    <br>
-                    Scenario #2:
-                    <br>
-                    Similarly, an application's blind trust in frameworks may result in queries that are still
-                    vulnerable,
-                    (e.g., Hibernate Query Language (HQL)): Query HQLQuery = session.createQuery("FROM accounts WHERE
-                    custID='" + request.getParameter("id") + "'");
-                    <br>
-                    In both cases, the attacker modifies the "id" parameter value in their browser to send: ' UNION
-                    SLEEP(10);--. For example:
-                    <br>
-                    http://example.com/app/accountView?id=' UNION SELECT SLEEP(10);--
-                    <br>
-                    This changes the meaning of both queries to return all the records from the accounts table. More
-                    dangerous attacks could
-                    modify or delete data or even invoke stored procedures.
-            </div>
-            <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Insecure design</p>
-                <p class="font-thin" style="font-size: 1.2vw;">
-                    Focuses on risks related to design and architectural flaws, with a call for more use of threat
-                    modeling, secure design patterns, and reference architectures. As a community we need to move beyond
-                    "shift-left" in the coding space to pre-code activities that are critical for the principles of
-                    Secure by Design.
-                    <br>
-                    Insecure design is a broad category representing different weaknesses, expressed as “missing or
-                    ineffective control design.” Insecure design is not the source for all other Top 10 risk categories.
-                    There is a difference between insecure design and insecure implementation. We differentiate between
-                    design flaws and implementation defects for a reason, they have different root causes and
-                    remediation. A secure design can still have implementation defects leading to vulnerabilities that
-                    may be exploited. An insecure design cannot be fixed by a perfect implementation as by definition,
-                    needed security controls were never created to defend against specific attacks. One of the factors
-                    that contribute to insecure design is the lack of business risk profiling inherent in the software
-                    or system being developed, and thus the failure to determine what level of security design is
-                    required.
-                    <br>
-                    Requirements and Resource management:
-                    <br>
-                    Collect and negotiate the business requirements for an application with the business, including the
-                    protection requirements concerning confidentiality, integrity, availability, and authenticity of all
-                    data assets and the expected business logic. Take into account how exposed your application will be
-                    and if you need segregation of tenants (additionally to access control). Compile the technical
-                    requirements, including functional and non-functional security requirements. Plan and negotiate the
-                    budget covering all design, build, testing, and operation, including security activities.
-                    <br>
-                    Secure design:
-                    <br>
-                    Secure design is a culture and methodology that constantly evaluates threats and ensures that code
-                    is robustly designed and tested to prevent known attack methods. Threat modeling should be
-                    integrated into refinement sessions (or similar activities); look for changes in data flows and
-                    access control or other security controls. In the user story development determine the correct flow
-                    and failure states, ensure they are well understood and agreed upon by responsible and impacted
-                    parties. Analyze assumptions and conditions for expected and failure flows, ensure they are still
-                    accurate and desirable. Determine how to validate the assumptions and enforce conditions needed for
-                    proper behaviors. Ensure the results are documented in the user story. Learn from mistakes and offer
-                    positive incentives to promote improvements. Secure design is neither an add-on nor a tool that you
-                    can add to software.
-                    <br>
-                    Secure development lifecycle:
-                    <br>
-                    Secure software requires a secure development lifecycle, some form of secure design pattern, paved
-                    road methodology, secured component library, tooling, and threat modeling. Reach out for your
-                    security specialists at the beginning of a software project throughout the whole project and
-                    maintenance of your software.
-                    <br>
-                    How do i prevent this?
-                    <br>
-                    You can try this:
-                    <br>
-                    Establish and use a secure development lifecycle with AppSec professionals to help evaluate and
-                    design security and privacy-related controls
-                    <br>
-                    Establish and use a library of secure design patterns or paved road ready to use components
-                    <br>
-                    Use threat modeling for critical authentication, access control, business logic, and key flows
-                    <br>
-                    Integrate security language and controls into user stories
-                    <br>
-                    Integrate plausibility checks at each tier of your application (from frontend to backend)
-                    <br>
-                    Write unit and integration tests to validate that all critical flows are resistant to the threat
-                    model. Compile use-cases and misuse-cases for each tier of your application.
-                    <br>
-                    Segregate tier layers on the system and network layers depending on the exposure and protection
-                    needs
-                    <br>
-                    Segregate tenants robustly by design throughout all tiers
-                    <br>
-                    Limit resource consumption by user or service
-                    <br>
-                    Example attack scenarios:
-                    <br>
-                    Scenario #1:
-                    <br>
-                    A credential recovery workflow might include “questions and answers,” which is
-                    prohibited by NIST 800-63b, the OWASP ASVS, and the OWASP Top 10. Questions and answers cannot be
-                    trusted as evidence of identity as more than one person can know the answers, which is why they are
-                    prohibited. Such code should be removed and replaced with a more secure design.
-                    <br>
-                    Scenario #2:
-                    <br>
-                    A cinema chain allows group booking discounts and has a maximum of fifteen attendees
-                    before requiring a deposit. Attackers could threat model this flow and test if they could book six
-                    hundred seats and all cinemas at once in a few requests, causing a massive loss of income.
-                    <br>
-                    Scenario #3:
-                    <br>
-                    A retail chain's e-commerce website does not have protection against bots run by
-                    scalpers buying high-end video cards to resell auction websites. This creates terrible publicity for
-                    the video card makers and retail chain owners and enduring bad blood with enthusiasts who cannot
-                    obtain these cards at any price. Careful anti-bot design and domain logic rules, such as purchases
-                    made within a few seconds of availability, might identify inauthentic purchases and rejected such
-                    transactions.
-            </div>
-            <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Security misconfiguration</p>
-                <p class="font-thin" style="font-size: 1.2vw;">
-                    90% of applications were tested for some form of misconfiguration, with an average incidence rate of
-                    4%, and over 208k occurrences of a Common Weakness Enumeration (CWE) in this risk category.
-                    <br>
-                    The application might be vulnerable if the application is:
-                    <br>
-                    Missing appropriate security hardening across any part of the application stack or improperly
-                    configured permissions on cloud services.
-                    <br>
-                    Unnecessary features are enabled or installed (e.g., unnecessary ports, services, pages, accounts,
-                    or privileges).
-                    <br>
-                    Default accounts and their passwords are still enabled and unchanged.
-                    <br>
-                    Error handling reveals stack traces or other overly informative error messages to users.
-                    <br>
-                    For upgraded systems, the latest security features are disabled or not configured securely.
-                    <br>
-                    The security settings in the application servers, application frameworks (e.g., Struts, Spring,
-                    ASP.NET), libraries, databases, etc., are not set to secure values.
-                    <br>
-                    The server does not send security headers or directives, or they are not set to secure values.
-                    <br>
-                    The software is out of date or vulnerable (see A06:2021-Vulnerable and Outdated Components).
-                    <br>
-                    Without a concerted, repeatable application security configuration process, systems are at a higher
-                    risk.
-                    <br>
-                    How do I prevent this?
-                    <br>
-                    Secure installation processes should be implemented, including:
-                    <br>
-                    A repeatable hardening process makes it fast and easy to deploy another environment that is
-                    appropriately locked down. Development, QA, and production environments should all be configured
-                    identically, with different credentials used in each environment. This process should be automated
-                    to minimize the effort required to set up a new secure environment.
-                    <br>
-                    A minimal platform without any unnecessary features, components, documentation, and samples. Remove
-                    or do not install unused features and frameworks.
-                    <br>
-                    A task to review and update the configurations appropriate to all security notes, updates, and
-                    patches as part of the patch management process.
-                    <br>
-                    A segmented application architecture provides effective and secure separation between components or
-                    tenants, with segmentation, containerization, or cloud security groups (ACLs).
-                    <br>
-                    Sending security directives to clients, e.g., Security Headers.
-                    <br>
-                    An automated process to verify the effectiveness of the configurations and settings in all
-                    environments.
-                    <br>
-                    Example attack scenarios:
-                    <br>
-                    Scenario #1:
-                    <br>
-                    The application server comes with sample applications not removed from the production
-                    server. These sample applications have known security flaws attackers use to compromise the server.
-                    Suppose one of these applications is the admin console, and default accounts weren't changed. In
-                    that case, the attacker logs in with default passwords and takes over.
-                    <br>
-                    Scenario #2:
-                    <br>
-                    Directory listing is not disabled on the server. An attacker discovers they can simply
-                    list directories. The attacker finds and downloads the compiled Java classes, which they decompile
-                    and reverse engineer to view the code. The attacker then finds a severe access control flaw in the
-                    application.
-                    <br>
-                    Scenario #3:
-                    <br>
-                    The application server's configuration allows detailed error messages, e.g., stack
-                    traces, to be returned to users. This potentially exposes sensitive information or underlying flaws
-                    such as component versions that are known to be vulnerable.
-                    <br>
-                    Scenario #4:
-                    <br>
-                    A cloud service provider (CSP) has default sharing permissions open to the Internet by
-                    other CSP users. This allows sensitive data stored within cloud storage to be accessed.
-            </div>
-        </div>
-    </div>
-</body>
 
+        <div id="Cr_fail" class="divs hidden">
+          <p class="font-semibold text-center" style="font-size: 2vw">
+            Cryptographic Failures
+          </p>
+          <p class="font-thin" style="font-size: 1.2vw">
+            Previously known as Sensitive Data Exposure, which is more of a
+            broad symptom rather than a root cause, the focus is on failures
+            related to cryptography (or lack thereof). Which often lead to
+            exposure of sensitive data. Notable Common Weakness Enumerations
+            (CWEs) included are CWE-259: Use of Hard-coded Password, CWE-327:
+            Broken or Risky Crypto Algorithm, and CWE-331 Insufficient Entropy.
+            <br />
+            The first thing is to determine the protection needs of data in
+            transit and at rest. For example, passwords, credit card numbers,
+            health records, personal information, and business secrets require
+            extra protection, mainly if that data falls under privacy laws,
+            e.g., EU's General Data Protection Regulation (GDPR), or
+            regulations, e.g., financial data protection such as PCI Data
+            Security Standard (PCI DSS). For all such data:
+            <br />
+            Is any data transmitted in clear text? This concerns protocols such
+            as HTTP, SMTP, FTP also using TLS upgrades like STARTTLS. External
+            internet traffic is hazardous. Verify all internal traffic, e.g.,
+            between load balancers, web servers, or back-end systems.
+            <br />
+            Are any old or weak cryptographic algorithms or protocols used
+            either by default or in older code?
+            <br />
+            Are default crypto keys in use, weak crypto keys generated or
+            re-used, or is proper key management or rotation missing? Are crypto
+            keys checked into source code repositories?
+            <br />
+            Is encryption not enforced, e.g., are any HTTP headers (browser)
+            security directives or headers missing?
+            <br />
+            Is the received server certificate and the trust chain properly
+            validated?
+            <br />
+            Are initialization vectors ignored, reused, or not generated
+            sufficiently secure for the cryptographic mode of operation? Is an
+            insecure mode of operation such as ECB in use? Is encryption used
+            when authenticated encryption is more appropriate?
+            <br />
+            Are passwords being used as cryptographic keys in absence of a
+            password base key derivation function?
+            <br />
+            Is randomness used for cryptographic purposes that was not designed
+            to meet cryptographic requirements? Even if the correct function is
+            chosen, does it need to be seeded by the developer, and if not, has
+            the developer over-written the strong seeding functionality built
+            into it with a seed that lacks sufficient entropy/unpredictability?
+            <br />
+            Are deprecated hash functions such as MD5 or SHA1 in use, or are
+            non-cryptographic hash functions used when cryptographic hash
+            functions are needed?
+            <br />
+            Are deprecated cryptographic padding methods such as PKCS number 1
+            v1.5 in use?
+            <br />
+            Are cryptographic error messages or side channel information
+            exploitable, for example in the form of padding oracle attacks?
+            <br />
+            How do I prevent this? You can try this:
+            <br />
+            Classify data processed, stored, or transmitted by an application.
+            Identify which data is sensitive according to privacy laws,
+            regulatory requirements, or business needs.
+            <br />
+            Don't store sensitive data unnecessarily. Discard it as soon as
+            possible or use PCI DSS compliant tokenization or even truncation.
+            Data that is not retained cannot be stolen.
+            <br />
+            Make sure to encrypt all sensitive data at rest.
+            <br />
+            Ensure up-to-date and strong standard algorithms, protocols, and
+            keys are in place; use proper key management.
+            <br />
+            Encrypt all data in transit with secure protocols such as TLS with
+            forward secrecy (FS) ciphers, cipher prioritization by the server,
+            and secure parameters. Enforce encryption using directives like HTTP
+            Strict Transport Security (HSTS).
+            <br />
+            Disable caching for response that contain sensitive data.
+            <br />
+            Apply required security controls as per the data classification.
+            <br />
+            Do not use legacy protocols such as FTP and SMTP for transporting
+            sensitive data.
+            <br />
+            Store passwords using strong adaptive and salted hashing functions
+            with a work factor (delay factor), such as Argon2, scrypt, bcrypt or
+            PBKDF2.
+            <br />
+            Initialization vectors must be chosen appropriate for the mode of
+            operation. For many modes, this means using a CSPRNG
+            (cryptographically secure pseudo random number generator). For modes
+            that require a nonce, then the initialization vector (IV) does not
+            need a CSPRNG. In all cases, the IV should never be used twice for a
+            fixed key.
+            <br />
+            Always use authenticated encryption instead of just encryption.
+            <br />
+            Keys should be generated cryptographically randomly and stored in
+            memory as byte arrays. If a password is used, then it must be
+            converted to a key via an appropriate password base key derivation
+            function.
+            <br />
+            Ensure that cryptographic randomness is used where appropriate, and
+            that it has not been seeded in a predictable way or with low
+            entropy. Most modern APIs do not require the developer to seed the
+            CSPRNG to get security.
+            <br />
+            Avoid deprecated cryptographic functions and padding schemes, such
+            as MD5, SHA1, PKCS number 1 v1.5.
+            <br />
+            Verify independently the effectiveness of configuration and
+            settings.
+            <br />
+            Example of such attacks:
+            <br />
+            Scenario #1:
+            <br />
+            An application encrypts credit card numbers in a database using
+            automatic database encryption. However, this data is automatically
+            decrypted when retrieved, allowing a SQL injection flaw to retrieve
+            credit card numbers in clear text.
+            <br />
+            Scenario #2:
+            <br />
+            A site doesn't use or enforce TLS for all pages or supports weak
+            encryption. An attacker monitors network traffic (e.g., at an
+            insecure wireless network), downgrades connections from HTTPS to
+            HTTP, intercepts requests, and steals the user's session cookie. The
+            attacker then replays this cookie and hijacks the user's
+            (authenticated) session, accessing or modifying the user's private
+            data. Instead of the above they could alter all transported data,
+            e.g., the recipient of a money transfer.
+            <br />
+            Scenario #3:
+            <br />
+            The password database uses unsalted or simple hashes to store
+            everyone's passwords. A file upload flaw allows an attacker to
+            retrieve the password database. All the unsalted hashes can be
+            exposed with a rainbow table of pre-calculated hashes. Hashes
+            generated by simple or fast hash functions may be cracked by GPUs,
+            even if they were salted.
+          </p>
+        </div>
+
+        <div id="inj" class="divs hidden">
+          <p class="font-semibold text-center" style="font-size: 2vw">
+            Injection
+          </p>
+          <p class="font-thin" style="font-size: 1.2vw">
+            94% of the applications were tested for some form of injection with
+            a max incidence rate of 19%, an average incidence rate of 3%, and
+            274k occurrences.
+            <br />
+            An application is vulnerable to attack when:
+            <br />
+            User-supplied data is not validated, filtered, or sanitized by the
+            application.
+            <br />
+            Dynamic queries or non-parameterized calls without context-aware
+            escaping are used directly in the interpreter.
+            <br />
+            Hostile data is used within object-relational mapping (ORM) search
+            parameters to extract additional, sensitive records.
+            <br />
+            Hostile data is directly used or concatenated. The SQL or command
+            contains the structure and malicious data in dynamic queries,
+            commands, or stored procedures.
+            <br />
+            Some of the more common injections are:
+            <br />
+            SQL, NoSQL, OS command, Object Relational Mapping (ORM), LDAP, and
+            Expression Language (EL) or Object Graph Navigation Library (OGNL)
+            injection.
+            <br />
+            The concept is identical among all interpreters. Source code review
+            is the best method of detecting if applications are vulnerable to
+            injections. Automated testing of all parameters, headers, URL,
+            cookies, JSON, SOAP, and XML data inputs is strongly encouraged.
+            Organizations can include static (SAST), dynamic (DAST), and
+            interactive (IAST) application security testing tools into the CI/CD
+            pipeline to identify introduced injection flaws before production
+            deployment.
+            <br />
+            How do i prevent this?
+            <br />
+            Preventing injection requires keeping data separate from commands
+            and queries:
+            <br />
+            The preferred option is to use a safe API, which avoids using the
+            interpreter entirely, provides a parameterized interface, or
+            migrates to Object Relational Mapping Tools (ORMs).
+            <br />
+            Note: Even when parameterized, stored procedures can still introduce
+            SQL injection if PL/SQL or T-SQL concatenates queries and data or
+            executes hostile data with EXECUTE IMMEDIATE or exec().
+            <br />
+            Use positive server-side input validation. This is not a complete
+            defense as many applications require special characters, such as
+            text areas or APIs for mobile applications.
+            <br />
+            For any residual dynamic queries, escape special characters using
+            the specific escape syntax for that interpreter.
+            <br />
+            Note: SQL structures such as table names, column names, and so on
+            cannot be escaped, and thus user-supplied structure names are
+            dangerous. This is a common issue in report-writing software.
+            <br />
+            Use LIMIT and other SQL controls within queries to prevent mass
+            disclosure of records in case of SQL injection.
+            <br />
+            Example attack scenarios:
+            <br />
+            Scenario #1:
+            <br />
+            An application uses untrusted data in the construction of the
+            following vulnerable SQL call: String query = "SELECT \* FROM
+            accounts WHERE custID='" + request.getParameter("id") + "'";
+            <br />
+            Scenario #2:
+            <br />
+            Similarly, an application's blind trust in frameworks may result in
+            queries that are still vulnerable, (e.g., Hibernate Query Language
+            (HQL)): Query HQLQuery = session.createQuery("FROM accounts WHERE
+            custID='" + request.getParameter("id") + "'");
+            <br />
+            In both cases, the attacker modifies the "id" parameter value in
+            their browser to send: ' UNION SLEEP(10);--. For example:
+            <br />
+            http://example.com/app/accountView?id=' UNION SELECT SLEEP(10);--
+            <br />
+            This changes the meaning of both queries to return all the records
+            from the accounts table. More dangerous attacks could modify or
+            delete data or even invoke stored procedures.
+          </p>
+        </div>
+
+        <div id="Insec_des" class="divs hidden">
+          <p class="font-semibold text-center" style="font-size: 2vw">
+            Insecure design
+          </p>
+          <p class="font-thin" style="font-size: 1.2vw">
+            Focuses on risks related to design and architectural flaws, with a
+            call for more use of threat modeling, secure design patterns, and
+            reference architectures. As a community we need to move beyond
+            "shift-left" in the coding space to pre-code activities that are
+            critical for the principles of Secure by Design.
+            <br />
+            Insecure design is a broad category representing different
+            weaknesses, expressed as “missing or ineffective control design.”
+            Insecure design is not the source for all other Top 10 risk
+            categories. There is a difference between insecure design and
+            insecure implementation. We differentiate between design flaws and
+            implementation defects for a reason, they have different root causes
+            and remediation. A secure design can still have implementation
+            defects leading to vulnerabilities that may be exploited. An
+            insecure design cannot be fixed by a perfect implementation as by
+            definition, needed security controls were never created to defend
+            against specific attacks. One of the factors that contribute to
+            insecure design is the lack of business risk profiling inherent in
+            the software or system being developed, and thus the failure to
+            determine what level of security design is required.
+            <br />
+            Requirements and Resource management:
+            <br />
+            Collect and negotiate the business requirements for an application
+            with the business, including the protection requirements concerning
+            confidentiality, integrity, availability, and authenticity of all
+            data assets and the expected business logic. Take into account how
+            exposed your application will be and if you need segregation of
+            tenants (additionally to access control). Compile the technical
+            requirements, including functional and non-functional security
+            requirements. Plan and negotiate the budget covering all design,
+            build, testing, and operation, including security activities.
+            <br />
+            Secure design:
+            <br />
+            Secure design is a culture and methodology that constantly evaluates
+            threats and ensures that code is robustly designed and tested to
+            prevent known attack methods. Threat modeling should be integrated
+            into refinement sessions (or similar activities); look for changes
+            in data flows and access control or other security controls. In the
+            user story development determine the correct flow and failure
+            states, ensure they are well understood and agreed upon by
+            responsible and impacted parties. Analyze assumptions and conditions
+            for expected and failure flows, ensure they are still accurate and
+            desirable. Determine how to validate the assumptions and enforce
+            conditions needed for proper behaviors. Ensure the results are
+            documented in the user story. Learn from mistakes and offer positive
+            incentives to promote improvements. Secure design is neither an
+            add-on nor a tool that you can add to software.
+            <br />
+            Secure development lifecycle:
+            <br />
+            Secure software requires a secure development lifecycle, some form
+            of secure design pattern, paved road methodology, secured component
+            library, tooling, and threat modeling. Reach out for your security
+            specialists at the beginning of a software project throughout the
+            whole project and maintenance of your software.
+            <br />
+            How do i prevent this?
+            <br />
+            You can try this:
+            <br />
+            Establish and use a secure development lifecycle with AppSec
+            professionals to help evaluate and design security and
+            privacy-related controls
+            <br />
+            Establish and use a library of secure design patterns or paved road
+            ready to use components
+            <br />
+            Use threat modeling for critical authentication, access control,
+            business logic, and key flows
+            <br />
+            Integrate security language and controls into user stories
+            <br />
+            Integrate plausibility checks at each tier of your application (from
+            frontend to backend)
+            <br />
+            Write unit and integration tests to validate that all critical flows
+            are resistant to the threat model. Compile use-cases and
+            misuse-cases for each tier of your application.
+            <br />
+            Segregate tier layers on the system and network layers depending on
+            the exposure and protection needs
+            <br />
+            Segregate tenants robustly by design throughout all tiers
+            <br />
+            Limit resource consumption by user or service
+            <br />
+            Example attack scenarios:
+            <br />
+            Scenario #1:
+            <br />
+            A credential recovery workflow might include “questions and
+            answers,” which is prohibited by NIST 800-63b, the OWASP ASVS, and
+            the OWASP Top 10. Questions and answers cannot be trusted as
+            evidence of identity as more than one person can know the answers,
+            which is why they are prohibited. Such code should be removed and
+            replaced with a more secure design.
+            <br />
+            Scenario #2:
+            <br />
+            A cinema chain allows group booking discounts and has a maximum of
+            fifteen attendees before requiring a deposit. Attackers could threat
+            model this flow and test if they could book six hundred seats and
+            all cinemas at once in a few requests, causing a massive loss of
+            income.
+            <br />
+            Scenario #3:
+            <br />
+            A retail chain's e-commerce website does not have protection against
+            bots run by scalpers buying high-end video cards to resell auction
+            websites. This creates terrible publicity for the video card makers
+            and retail chain owners and enduring bad blood with enthusiasts who
+            cannot obtain these cards at any price. Careful anti-bot design and
+            domain logic rules, such as purchases made within a few seconds of
+            availability, might identify inauthentic purchases and rejected such
+            transactions.
+          </p>
+        </div>
+
+        <div id="Sec_misconfig" class="divs hidden">
+          <p class="font-semibold text-center" style="font-size: 2vw">
+            Security misconfiguration
+          </p>
+          <p class="font-thin" style="font-size: 1.2vw">
+            90% of applications were tested for some form of misconfiguration,
+            with an average incidence rate of 4%, and over 208k occurrences of a
+            Common Weakness Enumeration (CWE) in this risk category.
+            <br />
+            The application might be vulnerable if the application is:
+            <br />
+            Missing appropriate security hardening across any part of the
+            application stack or improperly configured permissions on cloud
+            services.
+            <br />
+            Unnecessary features are enabled or installed (e.g., unnecessary
+            ports, services, pages, accounts, or privileges).
+            <br />
+            Default accounts and their passwords are still enabled and
+            unchanged.
+            <br />
+            Error handling reveals stack traces or other overly informative
+            error messages to users.
+            <br />
+            For upgraded systems, the latest security features are disabled or
+            not configured securely.
+            <br />
+            The security settings in the application servers, application
+            frameworks (e.g., Struts, Spring, ASP.NET), libraries, databases,
+            etc., are not set to secure values.
+            <br />
+            The server does not send security headers or directives, or they are
+            not set to secure values.
+            <br />
+            The software is out of date or vulnerable (see A06:2021-Vulnerable
+            and Outdated Components).
+            <br />
+            Without a concerted, repeatable application security configuration
+            process, systems are at a higher risk.
+            <br />
+            How do I prevent this?
+            <br />
+            Secure installation processes should be implemented, including:
+            <br />
+            A repeatable hardening process makes it fast and easy to deploy
+            another environment that is appropriately locked down. Development,
+            QA, and production environments should all be configured
+            identically, with different credentials used in each environment.
+            This process should be automated to minimize the effort required to
+            set up a new secure environment.
+            <br />
+            A minimal platform without any unnecessary features, components,
+            documentation, and samples. Remove or do not install unused features
+            and frameworks.
+            <br />
+            A task to review and update the configurations appropriate to all
+            security notes, updates, and patches as part of the patch management
+            process.
+            <br />
+            A segmented application architecture provides effective and secure
+            separation between components or tenants, with segmentation,
+            containerization, or cloud security groups (ACLs).
+            <br />
+            Sending security directives to clients, e.g., Security Headers.
+            <br />
+            An automated process to verify the effectiveness of the
+            configurations and settings in all environments.
+            <br />
+            Example attack scenarios:
+            <br />
+            Scenario #1:
+            <br />
+            The application server comes with sample applications not removed
+            from the production server. These sample applications have known
+            security flaws attackers use to compromise the server. Suppose one
+            of these applications is the admin console, and default accounts
+            weren't changed. In that case, the attacker logs in with default
+            passwords and takes over.
+            <br />
+            Scenario #2:
+            <br />
+            Directory listing is not disabled on the server. An attacker
+            discovers they can simply list directories. The attacker finds and
+            downloads the compiled Java classes, which they decompile and
+            reverse engineer to view the code. The attacker then finds a severe
+            access control flaw in the application.
+            <br />
+            Scenario #3:
+            <br />
+            The application server's configuration allows detailed error
+            messages, e.g., stack traces, to be returned to users. This
+            potentially exposes sensitive information or underlying flaws such
+            as component versions that are known to be vulnerable.
+            <br />
+            Scenario #4:
+            <br />
+            A cloud service provider (CSP) has default sharing permissions open
+            to the Internet by other CSP users. This allows sensitive data
+            stored within cloud storage to be accessed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
