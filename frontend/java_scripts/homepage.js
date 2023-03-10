@@ -8,6 +8,12 @@ function pullDown(id, arrow) {
       arr.classList.add("fa-circle-arrow-up");
       paragraph.style.removeProperty("box-shadow");
     }
+    else{
+        paragraph.style.height = "149px"
+        arr.classList.remove("fa-circle-arrow-up");
+        arr.classList.add("fa-circle-arrow-down");
+        paragraph.style.boxShadow = "black 0px -80px 100px -50px inset"
+    }
 }  
 document.addEventListener("DOMContentLoaded", (event) =>{
     function pullDown(id, arrow) {
@@ -29,3 +35,13 @@ document.addEventListener("DOMContentLoaded", (event) =>{
         }
     }
 })
+
+function toggleMenu(id){
+    const menu = document.getElementById(id);
+    if(menu.classList.contains("hidden")){
+        menu.classList.remove("hidden");
+    }
+    else{
+        menu.classList.add("hidden");
+    }
+}

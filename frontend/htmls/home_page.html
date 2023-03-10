@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <title>SecureU</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/frontend/java_scripts/homepage.js"></script>
+  <script src="https://kit.fontawesome.com/4a6278922f.js" crossorigin="anonymous"></script>
+  <style>
+    .frame {
+      border: 3px solid black;
+      width: 30%;
+      height: 149px;
+      background-color: white;
+    }
+
+    #enc,
+    #hack {
+      transition: height 0.5s ease-out;
+    }
+
+    #cyber_sec {
+      transition: height 0.3s ease-out;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <nav class="bg-blue-800">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <a href="/frontend/htmls/home_page.html"
+                class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
+              <a href="/frontend/htmls/learn_ab_hacks.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Learn
+                about common hacks</a>
+              <a href="/frontend/htmls/encrypt.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Encrypt</a>
+              <a href="/frontend/htmls/password.html"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Password</a>
+            </div>
+          </div>
+        </div>
+        <div class="relative ml-3">
+          <div>
+            <button type="button"
+              class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              id="user-menu-button" aria-expanded="false" aria-haspopup="true" onclick="toggleMenu('menu')">
+              <span class="sr-only">Open user menu</span>
+              <img class="h-8 w-8 rounded-full" src="/frontend/imgs/user.png" alt="">
+            </button>
+          </div>
+          <div
+            class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" id="menu">
+            <p class="text-center block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-0">Your username:</p>
+            <p class="text-center block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
+              id="user-menu-item-1">Your email:</p>
+            <a href="/frontend/htmls/index.html" class="text-center block px-4 py-2 text-sm text-gray-700"
+              role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <div class="sm:hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pt-2 pb-3">
+        <a href="home_page.html" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+          aria-current="page">Home</a>
+        <a href="learn_ab_hacks.html"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Learn about
+          common hacks</a>
+        <a href="encrypt.html"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Encrypt</a>
+        <a href="password.html"
+          class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Password</a>
+      </div>
+    </div>
+  </nav>
+  <div class="w-2/3 mx-auto shadow-xl min-h-screen bg-white pb-10">
+    <br><br>
+    <h1 class="text-4xl text-center font-black mx-10" style="font-size: 2.5vw">
+      Here you can learn free and easy how to stay safe on the Internet!
+    </h1>
+    <div id="cyber_sec" class="frame text-center mx-auto mt-20 overflow-hidden relative p-3 w-7/12"
+      style="box-shadow: black 0px -80px 100px -50px inset">
+      <div id="big_height">
+        <p class="text-3xl font-semibold" style="font-size: 2vw">
+          What is cyber security?
+        </p>
+        <br />
+        <p class="text-xl pb-5" style="font-size: 1.2vw">
+          Cyber security is the protection of computer systems and networks from
+          attack by malicious actors that may result in unauthorized information
+          disclosure, theft of, or damage to hardware, software, or data, as
+          well as from the disruption or misdirection of the services they
+          provide.
+        </p>
+        <br />
+        <i id="arrow_cs" onclick="pullDown('cyber_sec', 'arrow_cs')"
+          class="pulldown-arrow fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
+      </div>
+    </div>
+    <div id="enc" class="frame text-center mx-auto mt-10 overflow-hidden relative p-4 w-7/12"
+      style="box-shadow: black 0px -80px 100px -50px inset">
+      <div id="big_height">
+        <p class="text-3xl font-semibold" style="font-size: 2vw">
+          What is encryption?
+        </p>
+        <br />
+        <p class="text-xl pb-5" style="font-size: 1.2vw">
+          Encryption is the process of scrambling or enciphering data so it can
+          be read only by someone with the means to return it to its original
+          state. It is a crucial feature of a safe and trustworthy Internet. It
+          helps provide data security for sensitive information. In this website
+          we have an example where you can try to encrypt a text or a password.
+          Encryption works by generating 2 keys - a public and a private one.
+          The public key is used for encrypting the data and can be shared with
+          other people. The private key is used for decrypting the data and
+          unlike the public one it SHOULD NOT be shared with anyone except
+          people you work with that need to decrypt certain files or passwords.
+          Our example works by generating the key with the "Generate new key"
+          button (the encryption won't work without generating the key) and then
+          you put the text in it's designated text box.
+        </p>
+        <br />
+        <i id="arrow_enc" onclick="pullDown('enc', 'arrow_enc')"
+          class="fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
+      </div>
+    </div>
+    <div id="hack" class="frame text-center mx-auto mt-10 overflow-hidden relative p-3 w-7/12"
+      style="box-shadow: black 0px -80px 100px -50px inset">
+      <div>
+        <p class="text-3xl font-semibold" style="font-size: 2vw">
+          What is hacking?
+        </p>
+        <br />
+        <p class="text-xl pb-5" style="font-size: 1.2vw">
+          Hacking refers to activities that seek to compromise digital devices, such as computers, smartphones, tablets,
+          and even entire networks. And while hacking might not always be for malicious purposes, nowadays most
+          references to hacking, and hackers, characterize it/them as unlawful activity by cybercriminals—motivated by
+          financial gain, protest, information gathering (spying), and even just for the “fun” of the challenge. Hacking
+          is typically technical in nature (like creating malvertising that deposits malware in a drive-by attack
+          requiring no user interaction). But hackers can also use psychology to trick the user into clicking on a
+          malicious attachment or providing personal data. These tactics are referred to as “social engineering.” In
+          fact, it's accurate to characterize hacking as an over-arching umbrella term for activity behind most if not
+          all of the malware and malicious cyberattacks on the computing public, businesses, and governments. Besides
+          social engineering and malvertising, common hacking techniques include: botnets, browser hijacks, denial of
+          service (DDoS) attacks, ransomware, rootkits, trojans, viruses and worms.
+        </p>
+        <br />
+        <i id="arrow_hack" onclick="pullDown('hack', 'arrow_hack')"
+          class="pulldown-arrow fa-solid fa-circle-arrow-down animate-bounce absolute bottom-0 cursor-pointer"></i>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
