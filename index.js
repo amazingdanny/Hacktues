@@ -104,8 +104,16 @@ window.onload = async () =>{
         console.log(getkey)
         getkey.onclick = async () =>
         {
-            console.log("key yay")
             await generate_key()
+            outputPrivateKey = document.getElementById("Output_private_key")
+            outputPublicKey = document.getElementById("Output_public_key")
+            //outputPrivateKey.value = SubtleCrypto.exportKey(key.privateKey)
+            outputPrivateKey.value = ab2str(await window.crypto.subtle.exportKey("pkcs8", key.privateKey));
+            outputPublicKey.value = ab2str(await window.crypto.subtle.exportKey("spki", key.publicKey));
+        }
+        const enter_Public_Key = documen.getElementById("Enter_Public_Key")
+        enter_Public_Key.onchange = () =>{
+            key.publicKey = b64toab(enter_Public_Key.value)
         }
         console.log(getkey)
         const encryptInput = document.getElementById("Enter_encrypting")
