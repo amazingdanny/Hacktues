@@ -2,7 +2,7 @@ CREATE DATABASE SecurityU;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    username TEXT NOT NULL,
-    email TEXT NOT NULL,
+    username VARCHAR(30) UNIQUE,
+    email VARCHAR(30) UNIQUE,
     password TEXT NOT NULL
 );
