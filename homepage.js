@@ -8,6 +8,12 @@ function pullDown(id, arrow) {
       arr.classList.add("fa-circle-arrow-up");
       paragraph.style.removeProperty("box-shadow");
     }
+    else{
+        paragraph.style.height = "160px"
+        arr.classList.remove("fa-circle-arrow-up");
+        arr.classList.add("fa-circle-arrow-down");
+        paragraph.style.boxShadow = "black 0px -60px 60px -50px inset"
+    }
 }  
 document.addEventListener("DOMContentLoaded", (event) =>{
     function pullDown(id, arrow) {
