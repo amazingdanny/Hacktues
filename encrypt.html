@@ -4,17 +4,6 @@
     <title>SecureU</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="index.js"></script>
-    <style>
-      .h1 {
-        font-family: "Monaco", monospace;
-        -webkit-text-stroke: 2px black;
-      }
-
-      .text {
-        font-family: "Arial", sans-serif;
-        -webkit-text-stroke: 1px black;
-      }
-    </style>
   </head>
 
   <body>
@@ -81,7 +70,7 @@
                   >Encrypt</a
                 >
                 <a
-                  href="#"
+                  href="password.html"
                   class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                   >Password</a
                 >
@@ -127,66 +116,91 @@
             >Encrypt</a
           >
           <a
-            href="#"
+            href="password.html"
             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
             >Password</a
           >
         </div>
       </div>
     </nav>
-    <div class="text-center mt-10">
+    <div class = "w-2/3 mx-auto shadow-xl">
+    <div class="mt-10 flex justify-center space-x-10">
       <button
         class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2"
         id="key"
       >
         Generate new key!
       </button>
+      <div>
+        <label class="sr-only">Enter your own key</label>
+        <input class="p-4 relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="Enter your own key">
+      </div>
     </div>
+    <div class="mt-5 flex justify-center space-x-10">
+      <p style = "font-size: 1.2vw;">Your public key right now is:</p>
+      <div>
+        <input class="p-4 relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+      </div>
+    </div>
+    <div class="mt-5 flex justify-center space-x-10">
+      <p style = "font-size: 1.2vw;">Your private key right now is:</p>
+      <div>
+        <input class="p-4 relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+      </div>
+    </div>
+    <div id = "Error"></div>
     <form class="space-y-10" action="#" method="POST">
-        <p class="text-center mt-10 font-thin" style = "font-size: 2.5vw;">Text to be encrypted:</p>
-      <div class="space-y-3 rounded-md shadow-sm">
-        <div>
-          <label class="sr-only">Enter text</label>
-          <input
-            class="mt-20 relative block rounded-md mx-auto border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            id="Enter_encrypting"
-            placeholder="Enter text"
-          />
+    <div class = "flex">
+      <div class = "text-center w-1/2">
+        <p class="mt-10 font-thin" style = "font-size: 2.5vw;">Text to be encrypted:</p>
+        <div class="space-y-3 rounded-md shadow-sm">
+          <div>
+            <label class="sr-only">Enter text</label>
+            <textarea
+              class="p-4 h-52 w-52 whitespace-normal mx-auto relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              id="Enter_encrypting"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
+        </div>
+        <p class="font-thin mt-10" style = "font-size: 2.5vw;">Encrypted text:</p>
+        <div class="space-y-3 rounded-md shadow-sm">
+          <div>
+            <label class="sr-only">Output</label>
+            <textarea
+              class="mb-10 p-4 h-52 w-52 whitespace-normal mx-auto relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              id="Enter_encrypting"
+              placeholder="Enter text"
+            ></textarea>
+          </div>
         </div>
       </div>
-      <p class="text-center font-thin" style = "font-size: 2.5vw;">Encrypted text:</p>
-      <div class="space-y-3 rounded-md shadow-sm">
-        <div>
-          <label class="sr-only">Output</label>
-          <input
-            class="mt-20 relative block rounded-md mx-auto border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            id="Enter_decrypting"
-            placeholder="Output"
-          />
-        </div>
-      </div>
+      <div class = "mr-24 w-1/2">
       <p class="text-center mt-10 font-thin" style = "font-size: 2.5vw;">Text to be decrypted:</p>
       <div class="space-y-3 rounded-md shadow-sm">
         <div>
           <label class="sr-only">Enter text</label>
-          <input
-            class="mt-20 relative block rounded-md mx-auto border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            id="Enter_decrypting"
-            placeholder="Enter text"
-          />
+          <textarea
+              class="p-4 h-52 w-52 whitespace-normal mx-auto relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              id="Enter_encrypting"
+              placeholder="Enter text"
+            ></textarea>
         </div>
       </div>
-      <p class="text-center font-thin" style = "font-size: 2.5vw;">Decrypted text:</p>
+      <p class="text-center font-thin mt-10" style = "font-size: 2.5vw;">Decrypted text:</p>
       <div class="space-y-3 rounded-md shadow-sm">
         <div>
           <label class="sr-only">Output</label>
-          <input
-            class="mt-20 relative block rounded-md mx-auto border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-            id="Output_decrypting"
-            placeholder="Output"
-          />
+          <textarea
+              class="mb-10 p-4 h-52 w-52 whitespace-normal mx-auto relative block rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              id="Enter_encrypting"
+              placeholder="Enter text"
+            ></textarea>
         </div>
       </div>
+    </div>
+    </div>
     </form>
+    </div>
   </body>
 </html>
