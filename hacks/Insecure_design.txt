@@ -1,4 +1,4 @@
-Insecure design:
+Insecure design
 Focuses on risks related to design and architectural flaws, with a call for more use of threat modeling, secure design patterns, and reference architectures. As a community we need to move beyond "shift-left" in the coding space to pre-code activities that are critical for the principles of Secure by Design.
 
 
