@@ -6,7 +6,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="bg-blue-800">
     <nav class="bg-blue-600">
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div class="relative flex h-16 items-center justify-between">
@@ -70,41 +70,41 @@
             </div>
         </div>
     </nav>
-    <div class="w-2/3 mx-auto shadow-xl pb-10 pt-10 min-h-screen">
+    <div class="w-2/3 mx-auto shadow-xl pb-10 pt-10 min-h-screen bg-purple-600">
         <p class="text-center font-semibold" style="font-size: 3vw">
             Click one of the buttons to read more information about the hack!
         </p>
         <div class="mt-10 flex justify-center space-x-10">
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 BAC
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 SSRF
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 Injection
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 SDIF
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 Security misconfiguration
             </button>
         </div>
         <div class="mt-10 flex justify-center space-x-10 ml-2">
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 VOC
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 IAF
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 Insecure design
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 SLMF
             </button>
-            <button class="bg-purple-600 rounded-md font-semibold text-white py-1 px-2" id="key">
+            <button class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2" id="key">
                 Cryptographic Failures
             </button>
         </div>
@@ -626,8 +626,7 @@
                     vulnerabilities related to components you use.
                     <br>
                     Only obtain components from official sources over secure links. Prefer signed packages to reduce the
-                    chance of including a modified, malicious component (See A08:2021-Software and Data Integrity
-                    Failures).
+                    chance of including a modified, malicious component.
                     <br>
                     Monitor for libraries and components that are unmaintained or do not create security patches for
                     older versions. If patching is not possible, consider deploying a virtual patch to monitor, detect,
@@ -732,98 +731,69 @@
                 </p>
             </div>
             <div class="hidden">
-                <p class="font-semibold text-center" style="font-size: 2vw;">Insecure design</p>
+                <p class="font-semibold text-center" style="font-size: 2vw;">Software and data integrity failures</p>
                 <p class="font-thin" style="font-size: 1.2vw;">
-                    Focuses on risks related to design and architectural flaws, with a call for more use of threat
-                    modeling, secure design patterns, and reference architectures. As a community we need to move beyond
-                    "shift-left" in the coding space to pre-code activities that are critical for the principles of
-                    Secure by Design.
+                    Focuses on making assumptions related to software updates, critical data, and CI/CD pipelines
+                    without verifying integrity. One of the highest weighted impacts from Common Vulnerability and
+                    Exposures/Common Vulnerability Scoring System (CVE/CVSS) data.
                     <br>
-                    Insecure design is a broad category representing different weaknesses, expressed as “missing or
-                    ineffective control design.” Insecure design is not the source for all other Top 10 risk categories.
-                    There is a difference between insecure design and insecure implementation. We differentiate between
-                    design flaws and implementation defects for a reason, they have different root causes and
-                    remediation. A secure design can still have implementation defects leading to vulnerabilities that
-                    may be exploited. An insecure design cannot be fixed by a perfect implementation as by definition,
-                    needed security controls were never created to defend against specific attacks. One of the factors
-                    that contribute to insecure design is the lack of business risk profiling inherent in the software
-                    or system being developed, and thus the failure to determine what level of security design is
-                    required.
+                    Software and data integrity failures relate to code and infrastructure that does not protect against
+                    integrity violations. An example of this is where an application relies upon plugins, libraries, or
+                    modules from untrusted sources, repositories, and content delivery networks (CDNs). An insecure
+                    CI/CD pipeline can introduce the potential for unauthorized access, malicious code, or system
+                    compromise. Lastly, many applications now include auto-update functionality, where updates are
+                    downloaded without sufficient integrity verification and applied to the previously trusted
+                    application. Attackers could potentially upload their own updates to be distributed and run on all
+                    installations. Another example is where objects or data are encoded or serialized into a structure
+                    that an attacker can see and modify is vulnerable to insecure deserialization.
                     <br>
-                    Requirements and Resource management:
-                    Collect and negotiate the business requirements for an application with the business, including the
-                    protection requirements concerning confidentiality, integrity, availability, and authenticity of all
-                    data assets and the expected business logic. Take into account how exposed your application will be
-                    and if you need segregation of tenants (additionally to access control). Compile the technical
-                    requirements, including functional and non-functional security requirements. Plan and negotiate the
-                    budget covering all design, build, testing, and operation, including security activities.
-                    <br>
-                    Secure design:
-                    Secure design is a culture and methodology that constantly evaluates threats and ensures that code
-                    is robustly designed and tested to prevent known attack methods. Threat modeling should be
-                    integrated into refinement sessions (or similar activities); look for changes in data flows and
-                    access control or other security controls. In the user story development determine the correct flow
-                    and failure states, ensure they are well understood and agreed upon by responsible and impacted
-                    parties. Analyze assumptions and conditions for expected and failure flows, ensure they are still
-                    accurate and desirable. Determine how to validate the assumptions and enforce conditions needed for
-                    proper behaviors. Ensure the results are documented in the user story. Learn from mistakes and offer
-                    positive incentives to promote improvements. Secure design is neither an add-on nor a tool that you
-                    can add to software.
-                    <br>
-                    Secure development lifecycle:
-                    Secure software requires a secure development lifecycle, some form of secure design pattern, paved
-                    road methodology, secured component library, tooling, and threat modeling. Reach out for your
-                    security specialists at the beginning of a software project throughout the whole project and
-                    maintenance of your software.
-                    <br>
-                    How do i prevent this?
+                    How do I prevent this?
                     <br>
                     You can try this:
                     <br>
-                    Establish and use a secure development lifecycle with AppSec professionals to help evaluate and
-                    design security and privacy-related controls
+                    Use digital signatures or similar mechanisms to verify the software or data is from the expected
+                    source and has not been altered.
                     <br>
-                    Establish and use a library of secure design patterns or paved road ready to use components
+                    Ensure libraries and dependencies, such as npm or Maven, are consuming trusted repositories. If you
+                    have a higher risk profile, consider hosting an internal known-good repository that's vetted.
                     <br>
-                    Use threat modeling for critical authentication, access control, business logic, and key flows
+                    Ensure that a software supply chain security tool, such as OWASP Dependency Check or OWASP
+                    CycloneDX, is used to verify that components do not contain known vulnerabilities
                     <br>
-                    Integrate security language and controls into user stories
+                    Ensure that there is a review process for code and configuration changes to minimize the chance that
+                    malicious code or configuration could be introduced into your software pipeline.
                     <br>
-                    Integrate plausibility checks at each tier of your application (from frontend to backend)
+                    Ensure that your CI/CD pipeline has proper segregation, configuration, and access control to ensure
+                    the integrity of the code flowing through the build and deploy processes.
                     <br>
-                    Write unit and integration tests to validate that all critical flows are resistant to the threat
-                    model. Compile use-cases and misuse-cases for each tier of your application.
-                    <br>
-                    Segregate tier layers on the system and network layers depending on the exposure and protection
-                    needs
-                    <br>
-                    Segregate tenants robustly by design throughout all tiers
-                    <br>
-                    Limit resource consumption by user or service
+                    Ensure that unsigned or unencrypted serialized data is not sent to untrusted clients without some
+                    form of integrity check or digital signature to detect tampering or replay of the serialized data
                     <br>
                     Example attack scenarios:
                     <br>
-                    Scenario #1:
+                    Scenario #1
                     <br>
-                    A credential recovery workflow might include “questions and answers,” which is
-                    prohibited by NIST 800-63b, the OWASP ASVS, and the OWASP Top 10. Questions and answers cannot be
-                    trusted as evidence of identity as more than one person can know the answers, which is why they are
-                    prohibited. Such code should be removed and replaced with a more secure design.
+                    Update without signing: Many home routers, set-top boxes, device firmware, and others do
+                    not verify updates via signed firmware. Unsigned firmware is a growing target for attackers and is
+                    expected to only get worse. This is a major concern as many times there is no mechanism to remediate
+                    other than to fix in a future version and wait for previous versions to age out.
                     <br>
-                    Scenario #2:
+                    Scenario #2
                     <br>
-                    A cinema chain allows group booking discounts and has a maximum of fifteen attendees
-                    before requiring a deposit. Attackers could threat model this flow and test if they could book six
-                    hundred seats and all cinemas at once in a few requests, causing a massive loss of income.
+                    SolarWinds malicious update: Nation-states have been known to attack update mechanisms,
+                    with a recent notable attack being the SolarWinds Orion attack. The company that develops the
+                    software had secure build and update integrity processes. Still, these were able to be subverted,
+                    and for several months, the firm distributed a highly targeted malicious update to more than 18,000
+                    organizations, of which around 100 or so were affected. This is one of the most far-reaching and
+                    most significant breaches of this nature in history.
                     <br>
-                    Scenario #3:
+                    Scenario #3
                     <br>
-                    A retail chain's e-commerce website does not have protection against bots run by
-                    scalpers buying high-end video cards to resell auction websites. This creates terrible publicity for
-                    the video card makers and retail chain owners and enduring bad blood with enthusiasts who cannot
-                    obtain these cards at any price. Careful anti-bot design and domain logic rules, such as purchases
-                    made within a few seconds of availability, might identify inauthentic purchases and rejected such
-                    transactions.
+                    Insecure Deserialization: A React application calls a set of Spring Boot microservices.
+                    Being functional programmers, they tried to ensure that their code is immutable. The solution they
+                    came up with is serializing the user state and passing it back and forth with each request. An
+                    attacker notices the "rO0" Java object signature (in base64) and uses the Java Serial Killer tool to
+                    gain remote code execution on the application server.
                 </p>
             </div>
             <div class="hidden">
