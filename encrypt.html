@@ -6,8 +6,8 @@
     <script src="encrypt.js"></script>
   </head>
 
-  <body class = "bg-blue-800">
-    <nav class="bg-blue-600">
+  <body class = "bg-white">
+    <nav class = "bg-blue-800">
       <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
           <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -77,22 +77,24 @@
               </div>
             </div>
           </div>
-          <div
-            class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
-          >
-            <div class="relative ml-3">
-              <div>
-                <button
-                  type="button"
-                  class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                  id="user-menu-button"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                >
-                  <span class="sr-only">Open user menu</span>
-                  <img class="h-8 w-8 rounded-full" src="user.png" alt="" />
-                </button>
-              </div>
+          <div class="relative ml-3">
+            <div>
+              <button type="button"
+                class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                id="user-menu-button" aria-expanded="false" aria-haspopup="true"  onclick = "toggleMenu('user_menu')">
+                <span class="sr-only">Open user menu</span>
+                <img class="h-8 w-8 rounded-full" src="user.png" alt="">
+              </button>
+            </div>
+            <div
+              class="hidden absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+              role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1" id = "user_menu">
+              <p class="block px-4 py-2 text-sm text-gray-700 text-center" role="menuitem" tabindex="-1"
+                id="user-menu-item-0">Your username:</p>
+              <p class="block px-4 py-2 text-sm text-gray-700 text-center" role="menuitem" tabindex="-1"
+                id="user-menu-item-1">Your email:</p>
+              <a href = "index.html" class="block px-4 py-2 text-sm text-gray-700 text-center" role="menuitem" tabindex="-1"
+                id="user-menu-item-2">Log out</a>
             </div>
           </div>
         </div>
@@ -123,7 +125,8 @@
         </div>
       </div>
     </nav>
-    <div class="w-2/3 mx-auto shadow-xl bg-purple-600 min-h-screen p-10">
+    <div class="w-2/3 mx-auto shadow-2xl bg-white min-h-screen p-10">
+      <p class="text-center font-bold mb-10" style = "font-size: 3vw">Simulate how encryption works!</p>
       <div class="flex justify-center space-x-10">
         <button
           class="bg-blue-400 rounded-md font-semibold text-white py-1 px-2"
