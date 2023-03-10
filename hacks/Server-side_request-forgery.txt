@@ -1,0 +1,37 @@
+Server-side request forgery:
+The data shows a relatively low incidence rate with above average testing coverage and above-average Exploit and Impact potential ratings. 
+
+
+SSRF flaws occur whenever a web application is fetching a remote resource without validating the user-supplied URL. It allows an attacker to coerce the application to send a crafted request to an unexpected destination, even when protected by a firewall, VPN, or another type of network access control list (ACL).
+
+As modern web applications provide end-users with convenient features, fetching a URL becomes a common scenario. As a result, the incidence of SSRF is increasing. Also, the severity of SSRF is becoming higher due to cloud services and the complexity of architectures.
+
+
+How do I prevent this?
+Developers can prevent SSRF by implementing some or all the following defense in depth controls:
+
+From Network layer:
+Segment remote resource access functionality in separate networks to reduce the impact of SSRF
+
+Enforce “deny by default” firewall policies or network access control rules to block all but essential intranet traffic.
+Hints:
+~ Establish an ownership and a lifecycle for firewall rules based on applications.
+~ Log all accepted and blocked network flows on firewalls
+
+From Application layer:
+Sanitize and validate all client-supplied input data
+
+Enforce the URL schema, port, and destination with a positive allow list
+
+Do not send raw responses to clients
+
+Disable HTTP redirections
+
+Be aware of the URL consistency to avoid attacks such as DNS rebinding and “time of check, time of use” (TOCTOU) race conditions
+
+Do not mitigate SSRF via the use of a deny list or regular expression. Attackers have payload lists, tools, and skills to bypass deny lists.
+
+Additional Measures to consider:
+Don't deploy other security relevant services on front systems (e.g. OpenID). Control local traffic on these systems (e.g. localhost)
+
+For frontends with dedicated and manageable user groups use network encryption (e.g. VPNs) on independent systems to consider very high protection needs
