@@ -1,16 +1,16 @@
-pas = document.getElementById("password")
-confirm_pas = document.getElementById("confirm_password")
-user = document.getElementById("user")
-email = document.getElementById("email-address")
+const pas = document.getElementById("password")
+const confirm_pas = document.getElementById("confirm_password")
+const user = document.getElementById("user")
+const email = document.getElementById("email-address")
 
 
 if(pas.value == confirm_pas.value){
-    let res = await fetch("http//secureu.network:8080/registration",{
+    let res = await fetch("http//localhost:8080/registration",{
         method: "POST",
         body: JSON.stringify({
-            "username" : user,
-            "email" : email,
-            "password" : pas
+            "username" : user.value,
+            "email" : email.value,
+            "password" : pas.value
         
         }),
         headers: {
