@@ -41,44 +41,13 @@ async function main(){
     console.log(enc.decode(encrypted))
 }
 
-function password_checker(password){
-    let timeout;
-    let strengthBadge //kato go addvwash w site-a mahni teq dwete i otkomentriraj wsichko
-    //let password = document.getElementById('PassEntry');
-    //let strengthBadge = document.getElementById('StrengthDisp');
-    let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
-    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
-    if(strongPassword.test(password)) {
-        //strengthBadge.style.backgroundColor = "green";
-        //strengthBadge.textContent = 'Strong';
-        return  "strong";
-    } else if(mediumPassword.test(password)) {
-        //strengthBadge.style.backgroundColor = 'yello w';
-        //strengthBadge.textContent = 'Medium';
-        return "medium";
-    } else {
-        //strengthBadge.style.backgroundColor = 'red';
-        //strengthBadge.textContent = 'Weak';
-        return "weak";
-    }
-}
+
 /*function main(){
     console.log(password_checker("Passw0r!dg4@"))
 }
 main()
 */
-function password_generator(){
-    let password = ''
-    let length = 15
-    const chars = "0123456789abcdefghijklmnopqrstuvxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVXYZ"
-    const array = new Uint32Array(length);
-    crypto.getRandomValues(array);
-    for (i = 0; i < length; i++)
-    {
-        password += chars[array[i] % chars.length];
-    }
-    return password
-}
+
 /*function main(){
     console.log(password_generator());
 }
@@ -96,7 +65,8 @@ function b64toab(base64) {
 function ab2str(buf) {
     return window.btoa(String.fromCharCode.apply(null, new Uint8Array(buf)));
 }
-window.onload = async () =>{
+
+document.addEventListener("DOMContentLoaded", (event) =>{
     try{
         let enc = new TextEncoder("utf-8");
         let enc2 = new TextDecoder("utf-8");
@@ -142,11 +112,11 @@ window.onload = async () =>{
                 [ "decrypt "]
             );
         }
-        enter_Public_Key.onchange = async () =>{
+        enter_Public_Key.onkeydown = async () =>{
             key.publicKey = await importPublicKey(enter_Public_Key.value)
             console.log(key.publicKey)
         }
-        enter_Private_Key.onchange = async () =>{
+        enter_Private_Key.onkeydown = async () =>{
             key.privateKey = await importPrivateKey(enter_Private_Key.value)
         }
         console.log(getkey)
@@ -155,7 +125,7 @@ window.onload = async () =>{
         let decrypt_elem 
         // console.log(Elem)
         // console.log(Elem2)
-        encryptInput.onchange = async () => {
+        encryptInput.onkeydown = async () => {
             console.log(encryptInput.value)
             decrypt_elem = await encryption(enc.encode(encryptInput.value))
             encryptOutput.value = ab2str(decrypt_elem)
@@ -164,13 +134,14 @@ window.onload = async () =>{
 
         const decryptInput = document.getElementById("Enter_decrypting")
         const decryptOutput = document.getElementById("Output_decrypting")
-        decryptInput.onchange = async () => {
+        decryptInput.onkeydown = async () => {
             // console.log("raboti.2")
             console.log(decrypt_elem)
             // console.log(enc2.decode(await decryption(decrypt_elem)))
             // console.log(await decryption(decrypt_elem))
             decryptOutput.value = enc2.decode(await decryption(b64toab(decryptInput.value)))
         }
+
     }
     catch(error){
         err = document.getElementById("Error")
@@ -178,4 +149,4 @@ window.onload = async () =>{
         err.style.color = "red"
     }
 
-}
+})
