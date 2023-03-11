@@ -2,23 +2,27 @@ const pas = document.getElementById("password")
 const confirm_pas = document.getElementById("confirm_password")
 const user = document.getElementById("user")
 const email = document.getElementById("email-address")
+const data = {
+    "username" : user.value,
+    "email" : email.value,
+    "password" : pas.value
+}
 
-
-if(pas.value == confirm_pas.value){
-    let res = await fetch("http//localhost:8080/registration",{
-        method: "POST",
-        body: JSON.stringify({
-            "username" : user.value,
-            "email" : email.value,
-            "password" : pas.value
-        
-        }),
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-    if(res.status == 0){
-        window.location.replace("index.html");
-        
+const button = document.getElementById("signin");
+button.onclick = () => {
+    if(pas.value == confirm_pas.value){
+        fetch("http://localhost:8080/registration",{
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+        .then(response => {
+            if (response.code === 1){
+                //location.href("/frontend/htmls/home_page.html");
+                window.location = "/frontend/htmls/home_page.html";
+            }    
+        })
     }
 }

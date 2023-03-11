@@ -21,8 +21,8 @@ app.post("/registration", async (req, res) =>{
             throw error;
         }
     }  
-
-    return res.json({message: "Registration successful.", code: 1});
+    console.log("runva se");
+    return res.json({code: 1});
 
 });
 
