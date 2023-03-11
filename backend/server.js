@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(
   cookieSession({
-    name: "bezkoder-session",
+    name: "Murdaboyz",
     secret: "COOKIE_SECRET",
     httpOnly: true
   })
